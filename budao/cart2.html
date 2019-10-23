@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/index.css"/>
+    <style>
+        .Shopping_1{width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 40px;}
+        .Shopping{min-height:170px;background:#f8f8f8;width:100%;font-size:15px;}
+        th{border-bottom: 1px solid #e0e0e0;border-top: 1px solid #e0e0e0}
+        tbody{border:1px solid #e0e0e0}
+        table{padding: 20px;}
+        .line30{clear: both;
+            font-size: 0px;
+            height: 30px;
+            overflow: hidden;}
+        .b1{border:0;}
+        th{padding: 10px;}
+        .left{float: left;margin-top: 8px;}
+        .right{float: right;}
+        .msg{height:150px;text-align: center;margin: auto;}
+        .msg-tips{margin-top: 120px;}
+    </style>
+</head>
+<body>
+    <div id='header' class='clearfixer'>
+        <a href=""><img src="../img1/LOGO.jpg" alt=""></a>
+        <div class='d1'>
+        <img src="../img1/33de77c0e61a9df84348134fd08c307.png" alt="">
+        <a href="">商场首页</a>
+        <span>欢迎光临</span>
+        <a href="">请登录</a>
+        <a href="">免费注册</a>
+        <a href=""><img src="../img1/ind_05.jpg" alt=""></a>
+        </div>
+        <div class='d2'>
+        <a href="">首页</a>
+        <a href="">展品中心</a>
+        <a href="">图片下载</a>
+        <a href="">下架公告</a>
+        <a href="">快递说明</a>
+        <a href="">关于我们</a>
+        <a href="">联系我们</a>
+        <a href="">帮助中心</a>
+        </div>
+    </div>
+    <div id="body" class="b1">
+        <div class="Shopping">
+            <div class="Shopping_1">
+                <div class="line30"></div>
+                <table style="width: 100%">
+                    <tr>
+                        <th style="width:48px;text-align:center"><a href="">全选</a></th>
+                        <th style="width:400px;padding-left:60px;text-align:left;text-align:left">商品信息</th>
+                        <th style="width: 100px;text-align:left">单价</th>
+                        <th style="width: 110px;text-align:center">数量</th>
+                        <th style="width: 110px;text-align:left">金额(元)</th>
+                        <th style="width: 100px;display:none;text-align:center">积分</th>
+                        <th style="width: 80px;text-align:center">操作</th>
+                    </tr>
+                    <tr>
+                        <td colspan="10" style="display:none">
+                            <div class="msg-tips">
+                                <div class="ico warning"></div>
+                                <div class="msg">
+                                    <strong>购物车没有商品！</strong>
+                                    <p>您的购物车为空，<a href="">马上去购物吧！</a></p>
+                                </div>
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    <tr style="height: 30px;text-align: right">
+                        <th colspan="8">已选择商品 <b id="totalQuantity" style="color:red">0</b> 件 &nbsp;&nbsp;&nbsp;商品总金额（不含运费）：<span style="color:red">￥</span><b id="totalAmount" style="color:red">0</b>元</th>
+                    </tr>
+                </table>
+                <div class="cart-foot">
+                    <div class="left btn-box">
+                        <a href="javascript:;" onclick="Esd.checkAll(this)">全选</a>
+                        <a href="javascript:;" onclick="Esd.checkAll()">删除</a>
+                    </div>
+                    <div class="right">
+                        <button class="btn" onclick="javascript:location.href='/'">继续购物</button>
+                        <button class="btn btn-success" onclick="Esd.balance()">立即结算</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" >
+            <p>友情链接：<a href="">万狼科技</a></p>
+            <ul class='u2'>
+                <li><a href="">展品中心</a></li>
+                <li><a href="">图片下载</a></li>
+                <li><a href="">下架公告</a></li>
+                <li><a href="">快递说明</a></li>
+                <li><a href="">关于我们</a></li>
+                <li><a href="">联系我们</a></li>
+                <li><a href="">帮助中心</a></li>
+            </ul>
+            <p class='p1'>全国订购热线：4006-918-8157×24小时在线订购客服工作时间：8:00-23:00</p>
+            <ul class='u3'>
+                <li><a href=""><img src="../img1/ind_70.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img1/ind_71.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img1/ind_72.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img1/ind_73.jpg" alt=""></a></li>
+                <li><a href=""><img src="../img1/ind_74.jpg" alt=""></a></li>
+            </ul>
+        </div>
+</body>
+</html>

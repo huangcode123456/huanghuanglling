@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/reg.css"/>
+    <script src="../js/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <div id='header' class='clearfixer'>
+            <a href=""><img src="../img1/LOGO.jpg" alt=""></a>
+        <div class='d1'>
+                <img src="../img1/33de77c0e61a9df84348134fd08c307.png" alt="">
+            <a href="">商场首页</a>
+            <span>欢迎光临</span>
+            <a href="">请登录</a>
+            <a href="">免费注册</a>
+            <a href=""><img src="../img1/ind_05.jpg" alt=""></a>
+        </div>
+        <div class='d2'>
+            <a href="">首页</a>
+            <a href="">展品中心</a>
+            <a href="">图片下载</a>
+            <a href="">下架公告</a>
+            <a href="">快递说明</a>
+            <a href="">关于我们</a>
+            <a href="">联系我们</a>
+            <a href="">帮助中心</a>
+        </div>
+    </div>
+    <div id="body">
+        <div class="b1">
+            <div>
+                <table>
+                    <tr>
+                        <th colspan="5">欢迎您注册布道坊</th>
+                    </tr>
+                    <tr>
+                        <td class="p2">手机:</td>
+                        <td colspan="3" class="pd"><input id="phone" type="text" placeholder="请输入手机号" onblur="show1()" onmouseout="show1()"/></td>
+                        <td ><span id="error1" style="display: none; background-color:red;color:white;">手机号不可用</span><span class="error2" style="display: none; background-color: green;color: white;">手机号可用</span></td>
+                    </tr>
+                    <tr>
+                        <td class="p2">图片验证码:</td>
+                        <td class="pd"><input type="text" class="i1 " placeholder="请输入图片验证码"/></td>
+                        <td><img src="../img1/checkcode.jpg" alt="" class="img1"/></td>
+                    </tr>
+                    <tr>
+                        <td class="p2">验证码:</td>
+                        <td colspan="2" class="pd"><input type="text" class="i2 " placeholder="请输入验证码"/>&nbsp;&nbsp;<button>获取</button></td>
+                        <td><div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="p2">密码:</td>
+                        <td colspan="3" class="pd"><input type="password" id="pwd" placeholder="请输入密码"/></td>
+                    </tr>
+                    <tr>
+                        <td class="p2">确认密码:</td>
+                        <td colspan="3" class="pd"><input type="password" id="ap" placeholder="请再次输入密码" onblur="ap()" onmouseout="ap()"/></td>
+                        <td ><span id="error3" style="display: none; background-color:red;color:white;">密码不一致</span><span id="error4" style="display: none; background-color:red;color:white;">密码不能为空</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="pd">注册即接受 <a href="" class="a1">注册许可协议</a></td>
+                        <td><div></div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center"><a href="" class="a2" onclick="reg()">立即注册</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>友情链接：<a href="">万狼科技</a></p>
+        <ul class='u2'>
+            <li><a href="">展品中心</a></li>
+            <li><a href="">图片下载</a></li>
+            <li><a href="">下架公告</a></li>
+            <li><a href="">快递说明</a></li>
+            <li><a href="">关于我们</a></li>
+            <li><a href="">联系我们</a></li>
+            <li><a href="">帮助中心</a></li>
+        </ul>
+        <p class='p1'>全国订购热线：4006-918-8157×24小时在线订购客服工作时间：8:00-23:00</p>
+        <ul class='u3'>
+            <li><a href=""><img src="../img1/ind_70.jpg" alt=""></a></li>
+            <li><a href=""><img src="../img1/ind_71.jpg" alt=""></a></li>
+            <li><a href=""><img src="../img1/ind_72.jpg" alt=""></a></li>
+            <li><a href=""><img src="../img1/ind_73.jpg" alt=""></a></li>
+            <li><a href=""><img src="../img1/ind_74.jpg" alt=""></a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // function show(){
+	// 	var $uname=document.getElementById("uname").value;  
+	// 	if($uname==""){
+	// 		document.getElementById('error').style.display="inline";
+	// 		document.getElementById('b1').style.border="1px solid red";
+	// 	}else{
+	// 		document.getElementById('error').style.display="none";
+	// 		document.getElementById('b1').style.border="1px solid #e6e6e6";
+	// 	}
+	// }
+
+    //确认密码
+    function ap(){
+        var $ap=document.getElementById("ap").value;
+        var $pwd=document.getElementById("pwd").value;
+        console.log($ap,$pwd)
+        if($ap==""){document.getElementById("error4").style.display="inline-block"}
+        if(!($ap===$pwd)){
+            document.getElementById("error3").style.display="inline-block";
+        }
+    }
+
+    //验证手机号是否重复
+	function show1(){
+		var $phone=document.getElementById("phone").value;
+        console.log($phone)
+		if($phone=="" || !(/^1[3456789]\d{9}$/.test($phone))){
+			document.getElementById('error1').style.display="inline";
+			document.getElementById('error2').style.display="none";
+			return;
+		}else{
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+			if(xhr.readyState==4 && xhr.status==200){
+				var result=xhr.responseText;
+				if(result==1){
+					document.getElementById('error1').style.display="none";
+					document.getElementById('error2').style.display="inline";
+					// document.getElementById('b2').style.border="1px solid red";
+					// document.getElementById("reg_1").disabled =true;
+				}else{
+					// document.getElementById('error4').style.display="none";
+					// document.getElementById('error1').style.display="none";
+					// document.getElementById('b2').style.border="1px solid #e6e6e6";
+					// document.getElementById("reg_1").disabled =false;
+				}
+			}
+		}
+			xhr.open('get',`reg/v1/reg/${$phone}`,true);
+			xhr.send();
+		}
+	}
+    			
+	function show2(){
+		var $pwd=document.getElementById("pwd").value; 
+		if($pwd=="" || !(/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/.test($pwd))){
+			document.getElementById('error3').style.display="inline";
+			document.getElementById('b3').style.border="1px solid red";
+			document.getElementById("reg_1").disabled =true;
+		}else{
+			document.getElementById('error3').style.display="none";
+			document.getElementById('b3').style.border="1px solid #e6e6e6";
+			document.getElementById("reg_1").disabled =false;
+		}
+	}
+	function show3(){
+		var $code=document.getElementById("code").value; 
+		if($code=="" || $code.length!=6){
+			document.getElementById('error3').style.display="inline";
+			document.getElementById('b4').style.border="1px solid red";
+		}else{
+			document.getElementById('error3').style.display="none";
+			document.getElementById('b4').style.border="1px solid #e6e6e6";
+		}
+	}
+	function bigImg(x){
+		x.style.border="1px solid black";
+	}
+	function normalImg(x){
+		x.style.border="1px solid #e6e6e6";
+	}
+
+	//注册
+	function reg(){
+		var $phone=phone.value;
+		var $pwd=pwd.value;
+
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4 && xhr.status==200){
+				
+				var result=xhr.responseText;
+				if(result=='1'){
+					alert('注册成功');
+					//window.location.href='http://127.0.0.1:8080/head.html';
+					localStorage.setItem("phone",phone.value);
+					window.open("http://127.0.0.1:8080/index.html", "_self");
+				}else{
+					alert('注册失败');
+				}
+			}
+		}
+			xhr.open("post","/reg/v1/reg",true);
+			var formdata="&phone="+$phone+"&pwd="+$pwd;
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			xhr.send(formdata);
+	}
+</script>
+</html>
