@@ -1,0 +1,31 @@
+<!--pages/naicha_detail/naicha_detail.wxml-->
+<!-- 商品详情 -->
+<view class="detail">
+  <view class="detail_hidden" bindtap="hidden">x</view>
+  <image class="detail_img" src="{{list.images}}"></image>
+  <view class="detail_title">{{list.title}}</view>
+  <view class="detail_xl">销量{{list.xl}}份</view>
+  <view class="detail_price">￥{{list.price}}</view>
+  <view class="detail_xgg" bindtap="show">选规格</view>
+  <view class="detail_ms">
+    <view class="detail_ms_title">商品描述</view>
+    <view class="detail_ms_content">{{list.title}}</view>
+  </view>
+</view>
+<!-- 遮罩层 -->
+<view  bindtap="del" class="{{shadow==0?'':'zz'}}"></view>
+<!-- 选规格 -->
+<view class="xgg" wx:if="{{shadow==1}}">
+  <view class="xgg_header">{{list.title}}</view>
+  <view class="xgg_bx">杯型：</view>
+  <view bindtap="del" class="xgg_del">x</view>
+  <view class="xgg_bx" value="{{radio}}" bindtap="onChange1">
+    <van-button class="xgg_bx1 " data-name="1">中杯</van-button>
+    <van-button data-name="2">小杯</van-button>
+  </view>
+  <view style="margin-left:20rpx;" wx:if="{{radio==1}}">已选择中杯</view>
+  <view style="margin-left:20rpx;" wx:else if="{{radio==2}}">已选择小杯</view>
+  <text wx:if="{{radio==1}}" class="xgg_price">￥22.00</text>
+  <text wx:else if="{{radio==2}}" class="xgg_price">￥{{list.price}}</text>
+  <view data-_id="{{}}" class="xgg_join" bindtap="addc">加入购物车</view>
+</view>

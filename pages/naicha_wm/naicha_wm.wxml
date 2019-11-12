@@ -1,0 +1,154 @@
+<!--pages/naicha_wm/naicha_wm.wxml-->
+<!-- 地址 -->
+<view class="{{shadow==0?'':'gd'}}">
+  <view>
+    <view class="dz">
+      <image class="dz_img" src="../../images/dz.png"></image>
+      <text>暂无地址</text>
+      <view class="triangle_border_down"></view>
+    </view>
+    <!-- 奶茶店 -->
+    <view class="ncd">
+      <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/waimai/t_15265267335afcf30d02df1.jpg" class="ncd_img"></image>
+      <view class="ncd_txt">
+        <text class="ncd_txt1">好好喝的奶茶店</text>
+        <view>
+          <text class="ncd_txt2">起送￥20</text>
+          <text class="ncd_txt3">起送￥5</text>
+          <text class="ncd_txt4">30分钟送达</text>
+        </view>
+        <text class="ncd_txt5">店铺地址：南山区</text>
+      </view>
+    </view>
+    <!-- 商品 -->
+    <view>
+      <!-- 头部 -->
+      <van-tabs sticky active="a">
+        <van-tab title="商品" name="a">
+          <!-- 右侧商品 -->
+          <view class="wm_product">
+          <!-- 左侧滚动栏 -->
+          <view class='under_line'></view>
+          <view style='float: left' class='left'>
+            <scroll-view scroll-y scroll-with-animation scroll-left="{{scrollLength}}" class='scrollY' >
+              <view class='all clear'>
+                <block wx:key="lists" wx:for="{{lists}}">
+                  <view bindtap='jumpIndex' data-menuindex='{{index}}'>
+                    <view bindtap="select{{index}}" class='text-style'>
+                      <text class="active1">{{item}}</text>
+                      <text class="{{indexId==index?'active':''}}"></text>
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </scroll-view>
+          </view>
+          <!-- 内商品 -->
+          <view  wx:for="{{list}}" wx:key="{{index}}">
+            <view class="wm_content" bindtap="detail">
+              <image data-index_i="{{index}}" class="wm_img" src="{{item.images}}"></image>
+              <!-- 文本 -->
+              <view class="wm_txt">
+                <view class="wm_txt2">{{item.title}}</view>
+                <view class="wm_txt3">销量：{{item.xl}}</view>
+                <view class="wm_txt4">￥{{item.price}}</view>
+              </view>
+              <view class="wm_size" bindtap="show">
+                <text data-index="{{index}}" class="wm_size_txt">选规格</text>
+              </view>
+            </view>
+            <!-- 选规格 -->
+            <view class="xgg" wx:if="{{shadow==1}}">
+                <view class="xgg_header">{{list[index1].title}}</view>
+              <view class="xgg_bx">杯型：</view>
+              <view bindtap="del" class="xgg_del">x</view>
+              <view class="xgg_bx" value="{{radio}}" bindtap="onChange1">
+                <van-button class="xgg_bx1 " data-name="1">中杯</van-button>
+                <van-button data-name="2">小杯</van-button>
+              </view>
+              <view style="margin-left:20rpx;" wx:if="{{radio==1}}">已选择中杯</view>
+              <view style="margin-left:20rpx;" wx:else if="{{radio==2}}">已选择小杯</view>
+              <van-stepper value="{{ 1 }}" bind:change="sl" />
+              <text wx:if="{{radio==1}}" class="xgg_price">￥22.00</text>
+              <text wx:else if="{{radio==2}}" class="xgg_price">￥{{list[index1].price}}</text>
+              <view data-_id="{{list[index1]._id}}" class="xgg_join" bindtap="addc">加入购物车</view>
+            </view>
+          </view>
+          <view class="none"></view>
+          <!-- 固定购物车 -->
+          <van-goods-action>
+            <van-goods-action-icon icon="chat-o" text="客服" dot />
+            <van-goods-action-icon icon="cart-o" text="购物车" info="{{gwc_red}}" />
+            <van-goods-action-icon icon="shop-o" text="店铺" />
+            <van-goods-action-button text="结算" />
+          </van-goods-action>
+          <!-- <view class="gdgwc">
+            <view class="gdgwc_d">
+              <image class="gdgwc_d_img" src="../../images/02_active.png"></image>
+            </view>
+            <text class="gdgwc_txt">请选择商品</text>
+            <view class="gdgwc_js">
+              <view class="gdgwc_js_txt">去结算</view>
+            </view>
+          </view> -->
+          </view>
+        </van-tab>
+        <van-tab title="评价" name="b">
+          <view class="pj">暂无评价</view>
+        </van-tab>
+        <van-tab title="店铺" name="c">
+          <view>
+            <view>商家信息</view>
+            <view>南山区</view>
+            <view>美食美味</view>
+          </view>
+        </van-tab>
+        <van-tab title="搜索" name="d">
+          <van-search value="{{ value }}" mplaceholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" shape="round" focus='{true}' bind:change="change"/>
+          <!-- 文本 -->
+          <view class="wm_content" bindtap="detail" wx:for="{{select}}" wx:key="index">
+            <image data-index_i="{{index}}" class="wm_img" src="{{item.images}}"></image>
+            <view class="wm_txt">
+              <view class="wm_txt2">{{item.title}}</view>
+              <view class="wm_txt3">销量：{{item.xl}}</view>
+              <view class="wm_txt4">￥{{item.price}}</view>
+            </view>
+            <view class="wm_size" bindtap="show">
+              <text data-index="{{index}}" class="wm_size_txt">选规格</text>
+            </view>
+            <!-- 选规格 -->
+            <view class="xgg" wx:if="{{shadow==1}}">
+              <view class="xgg_header">{{select[index1].title}}</view>
+              <view class="xgg_bx">杯型：</view>
+              <view bindtap="del" class="xgg_del">x</view>
+              <view class="xgg_bx" value="{{radio}}" bindtap="onChange1">
+                <van-button class="xgg_bx1 " data-name="1">中杯</van-button>
+                <van-button data-name="2">小杯</van-button>
+              </view>
+              <view style="margin-left:20rpx;" wx:if="{{radio==1}}">已选择中杯</view>
+              <view style="margin-left:20rpx;" wx:else if="{{radio==2}}">已选择小杯</view>
+              <text wx:if="{{radio==1}}" class="xgg_price">￥22.00</text>
+              <text wx:else if="{{radio==2}}" class="xgg_price">￥{{select[index1].price}}</text>
+              <view data-_id="{{}}" class="xgg_join" bindtap="addc">加入购物车</view>
+            </view>
+          </view>
+        </van-tab>
+      </van-tabs>
+    </view>
+  </view>
+</view>
+<!-- 商品详情 -->
+<view wx:for="{{list}}" wx:key="index" wx:if="{{detail==1}}" class="detail">
+  <view class="detail_hidden" bindtap="hidden">x</view>
+  <image class="detail_img" src="{{list[index1].images}}"></image>
+  <view class="detail_title">{{list[index1].title}}</view>
+  <view class="detail_xl">销量{{list[index1].xl}}份</view>
+  <view class="detail_price">￥{{list[index1].price}}</view>
+  <view class="detail_xgg" bindtap="show">选规格</view>
+  <view class="detail_ms">
+    <view class="detail_ms_title">商品描述</view>
+    <view class="detail_ms_content">{{list[index1].title}}</view>
+  </view>
+</view>
+<!-- 遮罩层 -->
+<view  bindtap="del" class="{{shadow==0?'':'zz'}}"></view>

@@ -1,0 +1,145 @@
+/* @import '../../assets/iconfont/iconfont.wxss';
+
+.footbar {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 120rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  width: 100vw;
+  height: 200rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  position: absolute;
+  right: 10rpx;
+}
+
+.right .jian {
+  border: 4rpx solid #ff7100;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60rpx;
+  color: #ff7100;
+  font-size: 36rpx;
+}
+
+.right .jia {
+  border: 4rpx solid #ff7100;
+  background: #ff7100;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.middle{
+  width:300rpx;
+  
+}
+
+.btn{
+  width: 280rpx;
+  background: #ff7100;
+  height: 100%;
+  color: #Fff;
+  text-align: center;
+}
+
+.price{
+  padding: 0 10rpx;
+  font-weight: bold;
+}
+
+.name{
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.desc{
+  font-size: 26rpx;
+  padding: 10rpx 0;
+  color: #999;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.left {
+  margin: 0 30rpx;
+  color: #ff7100;
+  width:80rpx;
+}
+
+.right input {
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #ff7100;
+  text-align: center;
+}
+
+.container {
+  background: #eee;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.icon-dagouyouquan {
+  font-size: 60rpx !important;
+}
+
+.icon-dagou {
+  font-size: 50rpx !important;
+} */
+
+/* pages/naicha_gwc/naicha_gwc.wxss */
+.gwc_body{
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  background: #eee;
+  height:250rpx; 
+  margin-bottom: 20rpx;
+}
+.gwc_body_check{
+  position: absolute;
+  top: 100rpx;
+  left: 20rpx;
+}
+.gwc_body>image{
+  position: absolute;
+  top: 15rpx;
+  left: 85rpx;
+  width: 220rpx;
+  height: 220rpx;
+}
+.gwc_body_txt{
+  position: absolute;
+  top: 20rpx;
+  left: 326rpx;
+}
+.gwc_body_bbq{
+  position: absolute;
+  top: 185rpx;
+  left: 330rpx;
+}
+/* 按钮隐藏  */
+.hidden{
+  display: none;
+}

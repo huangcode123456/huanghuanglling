@@ -1,0 +1,135 @@
+/* pages/naicha_wm/naicha_wm.wxss */
+/* 地址 */
+  .dz{margin: 20rpx;}
+  .dz_img{
+    width: 40rpx;height: 40rpx;
+  }
+  /*向下*/
+  .triangle_border_down{
+    display: inline-block;
+    width:0;
+    height:0;
+    border-width:30rpx 15rpx 0;
+    border-style:solid;
+    border-color:#333 transparent transparent;/*灰 透明 透明 */
+    position:relative;
+  }
+  .triangle_border_down span{
+    display:block;
+    width:0;
+    height:0;
+    border-width:28px 28px 0;
+    border-style:solid;
+    border-color:#fc0 transparent transparent;/*黄 透明 透明 */
+    position:absolute;
+    top:0px;
+    left:0px;
+  }
+/* 奶茶店 */
+  .ncd{width: 100%;height: 193rpx;position: relative;border-bottom: 30rpx solid #f3f3f3;}
+  .ncd_img{width: 160rpx;height: 160rpx;margin:12rpx;}
+  .ncd_txt{position: absolute;top: 0;left: 190rpx;}
+  .ncd_txt1{font-weight: bold;font-size: 25rpx;width: 100%}
+  .ncd_txt2{font-size: 22rpx;padding-right: 15rpx;border-right: 1rpx solid rgb(229, 229, 229);box-sizing: border-box}
+  .ncd_txt3{font-size: 22rpx;padding:0  15rpx 0 15rpx;}
+  .ncd_txt4{font-size: 22rpx;padding-left: 15rpx;border-left: 1rpx solid rgb(229, 229, 229);}
+  .ncd_txt5{font-size: 22rpx;}
+/* 左侧导航栏 */
+  .under_line{
+  width: 100%;
+  border-top: 1rpx solid #efefef;
+  }
+  .scrollY {
+  width: 180rpx;
+  left: 0;
+  top: 0;
+  border-right: 1rpx solid #efefef;
+  }
+  .left {
+  border-top: 1rpx solid #efefef;
+  border-right: 1rpx solid #efefef;
+  }
+  .text-style {
+  width: 180rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  text-align: center;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold;
+  color: rgba(51, 51, 51, 1);
+  }
+  .active1 {
+  font-size:30rpx; 
+  }
+  .active {
+  display: block;
+  width: 13rpx;
+  height: 80rpx;
+  background: #f44;
+  position: relative;
+  left: 0rpx;
+  bottom: 110rpx;
+  }
+/* 商品 */
+  .wm_content{position: relative;width: 75%;float: right;}
+  .wm_img{width: 220rpx;height: 220rpx;}
+  .wm_txt{position: absolute;top: 0;left:  235rpx;}
+  .wm_txt2{font-weight: bold;}
+  .wm_txt3{font-size: 28rpx;color: #999;}
+  .wm_txt4{font-weight: 600;margin-top: 50rpx;color: #ff7100;font-size: 50rpx;}
+  .wm_size{width: 80rpx;height: 40rpx;background-color: #ff7100;text-align: center;color: #fff;line-height: 40rpx;border-radius: 45%;position: absolute;bottom: 30rpx;right: 35rpx;font-size: 25rpx;}
+  .none{width: 400rpx;height: 200rpx;float: right;}
+/* 固定购物车 */
+  .gdgwc{position: fixed;
+    text-align: center;
+    line-height: .9rem;
+    display: block;
+    bottom: .2rem;
+    width: 19rem;
+    left: .3rem;
+    border-radius: 50rpx;
+    background-color: #474749;
+    overflow: hidden;
+    box-shadow: 0 0.06rem 0.07rem 0.01rem rgba(66,68,70,.3);
+    height: 90rpx;
+    }
+  .gdgwc_d{position: absolute;background-color: #343940;width: 60rpx;height: 60rpx;border-radius: 50%;top: 17rpx;left: 20rpx;}
+  .gdgwc_d_img{width: 40rpx;height: 40rpx;position: absolute;top: 10rpx;left: 10rpx;}
+  .gdgwc_txt{position: absolute;top: 30rpx;left: 35rpx;width: 300rpx;color: rgb(155, 155, 157);}
+  .gdgwc_js{background: linear-gradient(-45deg,#ff6500,#fe8f02);width: 220rpx;height: 100rpx;position: absolute; top: 0rpx;right: 0rpx;}
+  .gdgwc_js_txt{color: #fff;margin-top: 30rpx;font-size: 30rpx;}
+/* 评价 */
+  .pj{text-align: center;margin-top: 80rpx;}
+/* 搜索 */
+/* 选规格 */
+  .xgg{width: 500rpx;height: 500rpx;z-index: 3;position: fixed;top: 300rpx;left: 115rpx;background: #fff;border-radius: 20rpx;}
+  .xgg_header{text-align: center;font-size: 45rpx;margin-top: 10rpx;font-weight: 600;}
+  .xgg_body{width: 100%;}
+  .xgg_del{width: 50rpx;height: 50rpx; position: absolute;top: 10rpx;right: 15rpx;text-align: center;line-height: 50rpx;}
+  .xgg_price{position: absolute;bottom: 15rpx;left: 40rpx;color: #ff7100;}
+  .xgg_join{position: absolute;bottom: 10rpx;right: 30rpx;background: #ff7100;color: #fff;width: 250rpx;height: 50rpx;border-radius: 50rpx;text-align: center;line-height: 50rpx;}
+  .xgg_bx{margin: 10rpx 30rpx;}
+  .xgg_bx1{margin:10rpx;}
+  .xgg_bx2{background: #ff7100;color: #fff;}
+/* 商品详情 */
+  .detail_hidden{position: absolute;top: 110rpx;right: 35rpx;font-size: 50rpx;} 
+  .detail{position: fixed;width: 100%;height: 100%;background: #fff;z-index: 1;}
+  .detail_img{width: 100%;height: 730rpx;}
+  .detail_xl{font-size: 30rpx;color: #999;}
+  .detail_price{color: rgb(255, 101, 0);}
+  .detail_xgg{width: 80rpx;height: 40rpx;background-color: #ff7100;text-align: center;color: #fff;line-height: 40rpx;border-radius: 45%;position: absolute;top: 800rpx;right: 35rpx;font-size: 25rpx;}
+  .detail_ms{margin-top: 30rpx;}
+  .detail_ms_title{font-size: 28rpx;margin-bottom: 10rpx;}
+  .detail_ms_content{font-size: 30rpx;}
+/* 遮罩层 */
+  .zz{
+    position:fixed;
+    width: 900rpx;
+    height: 100%;
+    background:#000;
+    opacity:0.8;
+    z-index: 2;
+    overflow: hidden;
+    }
+/* 固定全局 */
+  .gd{overflow:hidden;width:100%;height:1100rpx;}

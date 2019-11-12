@@ -1,0 +1,163 @@
+<view>
+  <view class="header">
+    <!-- 首页轮播图 s-->
+    <view>
+      <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true" style="height:400rpx;width:100%">
+        <swiper-item>
+          <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/create-collection.png" style="width:100%;height:100%"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5d28518b03b0c.png" style="width:100%;height:100%;"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+    <!-- 首页轮播图 e-->
+    <!-- 点单与外卖 s-->
+    <view class="dd_wm">
+      <!-- 点单 -->
+      <view class="dd">
+        <image class="dd_img_bg" src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5b97cc899d8f0.png"></image>
+        <image class="dd_img_1" src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5b97cbeeb4989.png"></image>
+        <view class="dd_txt">
+          <view class="dd_txt1">店内点单</view>
+          <view class="dd_txt2">畅销更多优惠</view>
+        </view>
+      </view>
+      <!-- 外卖 -->
+      <view class="dd1" bindtap="wm">
+        <image class="dd_img_bg" src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5b97cd0289700.png"></image>
+        <image class="dd_img_1" src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5b97cbeeb4989.png"></image>
+        <view class="dd_txt">
+          <view class="dd_txt1" style="color:rgb(2, 148, 0);">外卖速达</view>
+          <view class="dd_txt2" style="color:rgb(168, 197, 150);">上门更方便</view>
+        </view>
+      </view>
+    </view>
+    <!-- 点单与外卖 e-->
+  </view>
+  <!--公告 s-->
+  <view class="gg">
+    <image class="gg_img" src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/gg.png"></image>
+    <text class="gg_txt">第二杯半价哦！！！</text>
+  </view>
+  <!-- 公告 e-->
+  <!-- 你的专属奶茶店 s-->
+  <view class="zs-nc">
+    <view class="zs-nc1">
+      <!-- 背景图片--> 
+      <image class="zs-img" src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5a2103e2a753b.png"></image>
+      <!-- 左边图片-->
+      <view class="zs-left-v">
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/t_15264395715afb9e932aedd.jpg"></image>
+      </view>
+      <!-- 文本 -->
+      <view class="zs-txt">
+        <view class="zs-txt1">你的专属奶茶店</view>
+        <view class="zs-txt2">深圳市南山区软件基地芒果网大厦</view>
+      </view>
+      <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5afa820166c84.png" class="zs-img1"></image>
+    </view>
+  </view>
+  <!-- 你的专属奶茶店 e-->
+  <!-- 服务 s-->
+  <van-row>
+    <van-col span="4" offset="1">
+      <view>
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5d2efc714a60d.png" class="fw_img"></image>
+        <text class="fw_txt">我要买单</text>
+      </view>
+    </van-col>
+    <van-col span="3" offset="1">
+      <view>
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5d2efd71531e6.png" class="fw_img"></image>
+        <text class="fw_txt">优惠券</text>
+      </view>
+    </van-col>
+    <van-col span="4" offset="2">
+      <view>
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5d2efc6920ce9.png" class="fw_img"></image>
+        <text class="fw_txt">储充有礼</text>
+      </view>
+    </van-col>
+    <van-col span="3" offset="1">
+      <view>
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5d2efc6d48898.png" class="fw_img"></image>
+        <text class="fw_txt">会员卡</text>
+      </view>
+    </van-col>
+    <van-col span="4" offset="1">
+      <view>
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5d2efc6bcf8a8.png" class="fw_img"></image>
+        <text class="fw_txt">优先排号</text>
+      </view>
+    </van-col>
+  </van-row>
+  <!-- 服务 e-->
+  <!-- 活动 s-->
+  <view class="hd">
+    <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5b72a928be307.png" class="hd_img"></image>
+    <view class="hd_body">
+      <text class="hd_txt">店 铺 活 动</text>
+      <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_591d0dfe1a872.png" class="hd_img1"></image>
+      <text class="hd_txt1">Shop activities</text>
+    </view>
+  </view>
+  <!-- 内容 s-->
+  <van-row>
+    <van-col span="12">
+      <view class="hd_content">
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5b839f181d478.png" class="hd_content_img"></image>
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5b84fddc5e2a9.png"class="hd_content_img1"></image>
+        <text class="hd_content_txt">转出美味</text>
+        <text class="hd_content_txt1">邀你一起开心大转盘</text>
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5d414c95d4ae5.png" class="hd_content_img2"></image>
+      </view>
+    </van-col>
+    <van-col span="12">
+      <view class="hd_content">
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5a2103e2a753b.png" class="hd_content_img"></image>
+        <text class="hd_content_txt">优惠团</text>
+        <text class="hd_content_txt1" style="position: absolute;top: 83rpx;left: 110rpx;">实惠大划算</text>
+        <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5d414c9310ac9.png" class="hd_content_img2"></image>
+      </view>
+    </van-col>
+  </van-row>
+  <!-- 内容 e-->
+  <!-- 活动 e-->
+   <!-- 活动 s-->
+  <view class="hd">
+    <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_5b72a928be307.png" class="hd_img"></image>
+    <view class="hd_body">
+      <text class="hd_txt">今 日 热 销</text>
+      <image src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/file_591d0dfe1a872.png" class="hd_img1"></image>
+      <text class="hd_txt1">Hot sale today</text>
+    </view>
+  </view>
+  <!-- 内容 s-->
+  <!-- 客服 s-->
+  <view class="kf">
+    <image class="kf_img" src="cloud://hhlcode6515-98w79.6868-hhlcode6515-98w79-1300467001/naicha-img/t_15343221235b73e5cb25d6c.png"></image>
+  </view>
+  <!-- 客服 e-->
+  <!-- 热销 s-->
+  <view>
+    <!-- 商品 -->
+    <view data-id="{{item._id}}" class="rx" wx:for="{{list}}" wx:key="index" bindtap="detail">
+      <!-- 图片 -->
+      <view class="rx_header">
+        <image class="rx_img" src="{{item.images}}"></image>
+      </view>
+      <!-- 文本 -->
+      <view class="rx_body">
+        <view class="rx_title">{{item.title}}</view>
+        <view class="rx_by">包邮</view>
+        <view class="rx_price">￥{{item.price}}</view>
+        <view class="rx_pay">{{item.xl}}人购买</view>
+        <view class="rx_gwc_d">
+          <image class="rx_gwc" src="../../images/02_active.png"></image>        
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 热销 e-->
+</view>

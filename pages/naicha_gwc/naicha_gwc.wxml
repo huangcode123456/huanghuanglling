@@ -1,0 +1,65 @@
+<!-- <view class="container">
+  <view class="item" wx:for="{{goodslist}}" wx:key="index">
+    <view class="left">
+      <view bindtap="select" data-id="{{item.id}}" class="iconfont {{item.isSelect ? 'icon-dagouyouquan' :'icon-dagou'}} "></view>
+    </view>
+    <view class="middle">
+      <view class="name">{{item.name}}</view>
+      <view class="desc">{{item.desc}}</view>
+    </view>
+    <view class="price">￥{{item.price}}</view>
+    <view class="flex right">
+      <view class="jian" bindtap="jian" data-id="{{item.id}}">-</view>
+      <input disabled value="{{item.count}}"></input>
+      <view class="jia" bindtap="jia" data-id="{{item.id}}">+</view>
+    </view>
+  </view>
+</view>
+
+<view class="footbar flex a-center j-space">
+  <view class="flex a-center" bindtap="selectAll">
+    <view class="iconfont {{isSelectAll ? 'icon-dagouyouquan' :'icon-dagou'}} left"></view>全选
+  </view>
+
+  <view style="font-weight:bold;font-size:40rpx;">￥{{totalMoney}}</view>
+
+  <view class="btn flex a-center j-center">
+    去结算
+  </view>
+</view> -->
+
+
+
+<!-- 顶部 -->
+<view style="height:100rpx;border-bottom:20rpx solid #eee">
+  <van-button type="info">删除选中项</van-button>
+</view>
+<!-- 商品 -->
+<view wx:if="{{list.length==undefined}}">
+  <view>空空如也</view>
+</view>
+<view wx:if="{{list.length!==undefined}}" bindtap="ischeckAll" class="gwc_body" wx:for="{{rows}}" wx:key="{{index}}">
+  <view  class="gwc_body_check">
+  <mycheckbox item="{{item}}" bind:myevent="getChecked" data-i="{{index}}"></mycheckbox></view>
+  <image src="{{item.images}}"></image>
+  <view class="gwc_body_txt">
+    <view>{{item.title}}</view>
+    <view>单价：￥{{item.price}}</view>
+    <!-- <view >数量：{{rows[index].sl}}</view>  -->
+  </view>
+  <view wx:if="{{item.checked==true}}"  class="gwc_body_bbq">
+    <van-stepper value="{{list[myindex].sl}}" bind:change="add"/>
+  </view>
+</view>
+<view style="width:100%;height:80rpx;"></view>
+<!-- 底部 -->
+<view wx:if="{{rows[myindex].checked==true}}" wx:for="{{list}}" wx:for="{{rows}}" wx:key="index">
+  <van-submit-bar
+    price="{{ rows[myindex].sumprice }}"
+    button-text="提交订单"
+    bind:submit="onClickButton"
+    tip="{{ true }}"
+  >
+    <view style="margin-left:30rpx;"><van-checkbox value="{{ checked_all }}" bind:change="onChange">全选</van-checkbox></view>
+  </van-submit-bar>
+</view>
