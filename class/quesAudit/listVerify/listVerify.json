@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-cell": "/components/gsd-ui/g-cell/index",
+    "g-icon": "/components/gsd-ui/g-icon/index",
+    "g-checkbox": "/components/gsd-ui/g-checkbox/index",
+    "g-checkbox-group": "/components/gsd-ui/g-checkbox-group/index",
+    "g-button-group": "/components/gsd-ui/g-button-group/index",
+    "g-requestTips": "/components/gsd-ui/g-requestTips/index"
+  }
+}

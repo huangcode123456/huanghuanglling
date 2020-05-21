@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "学生注册情况",
+  "usingComponents": {
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-icon": "/components/gsd-ui/g-icon/index"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-cell": "/components/gsd-ui/g-cell/index",
+    "g-image": "/components/gsd-ui/g-image/index",
+    "g-badge": "/components/gsd-ui/g-badge/index",
+    "g-icon": "/components/gsd-ui/g-icon/index",
+    "g-requestTips": "/components/gsd-ui/g-requestTips/index",
+    "g-checkbox-group": "/components/gsd-ui/g-checkbox-group/index"
+  },
+  "navigationBarTitleText": "学生列表"
+}

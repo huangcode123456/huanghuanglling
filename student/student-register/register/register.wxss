@@ -1,0 +1,25 @@
+/* pages/student/student-register/register/register.wxss */
+@import '/components/gsd-ui/static/style/main';
+
+.wrap-box{
+    width: 100%;
+    height: 440rpx;
+    background-image: linear-gradient(-180deg, #0F59A4 0%, #2775B6 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 30rpx 0 160rpx; */
+    padding-top: 30rpx;
+}
+.icon-st{
+    width: 160rpx;
+    height: 160rpx;
+    margin-bottom: 40rpx;
+}
+.txt{
+    font-family: PingFangSC-Medium;
+    font-size: 40rpx;
+    color: #BCDDFF;
+    font-weight: bold;
+    padding: 10rpx;
+}

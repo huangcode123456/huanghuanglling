@@ -1,0 +1,49 @@
+/* pages/school/admin/details/details.wxss */
+@import '/components/gsd-ui/static/style/main';
+.user-image{
+  border-radius: 10rpx;
+}
+.user-info-label{
+  width: 200rpx !important;
+}
+
+.header {
+  padding: 20rpx 20rpx 50rpx;
+  color: #fff;
+  background-image: linear-gradient(to bottom, #0f59a4 36%, #2775b6 100%);
+  border-bottom-left-radius: 100rpx 20rpx;
+  border-bottom-right-radius: 100rpx 20rpx;
+}
+.header .userInfo {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+.userInfo .avatar{
+  width: 68rpx;
+  height: 68rpx;
+  background: #2f70c5;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-right: 10rpx;
+}
+.header .schoolTitle{
+  margin-top: 20rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #fff;
+  line-height: 56rpx;
+  text-align: center
+}
+.header .schoolSubTitle{
+  text-align: center;
+}
+.schoolSubTitle .tag{
+  display: inline-block;
+  margin: 0 5rpx;
+  font-size: 20rpx;
+  line-height: 1.2;
+  padding:5rpx 10rpx;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5rpx;
+}

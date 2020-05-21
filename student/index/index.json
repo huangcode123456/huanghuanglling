@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "数据填报中心",
+  "backgroundColorTop": "#0F59A4",
+  "navigationBarBackgroundColor": "#0F59A4",
+  "usingComponents": {
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-icon": "/components/gsd-ui/g-icon/index",
+    "g-image": "/components/gsd-ui/g-image/index",
+    "g-cell": "/components/gsd-ui/g-cell/index"
+  }
+}

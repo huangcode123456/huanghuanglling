@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-cell": "/components/gsd-ui/g-cell/index",
+    "g-image": "/components/gsd-ui/g-image/index"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "问卷统计",
+  "usingComponents": {
+    "g-badge": "/components/gsd-ui/g-badge/index",
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-cell": "/components/gsd-ui/g-cell/index"
+  }
+}

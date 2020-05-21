@@ -1,0 +1,11 @@
+<!--pages/class/statis/index/index.wxml-->
+<view class="header">
+  <view class="schoolTitle">湖南师范大学附属小学</view>
+  <view class="schoolSubTitle">问卷统计</view>
+</view>
+
+
+ <g-box>
+    <g-cell label="每日学生体温检测表" to="/pages/class/statis/listByDate/listByDate" to-type="to" access></g-cell>
+    <g-cell label="出门情况登记表" to="/pages/class/statis/listByDate/listByDate" to-type="to" access ></g-cell>
+</g-box>

@@ -1,0 +1,21 @@
+/* pages/school/teacher/verifyList/verifyList.wxss */
+@import '/components/gsd-ui/static/style/main';
+.user-image{
+  border-radius: 10rpx;
+}
+.user-item{
+  position: relative;
+}
+.user-item:after {
+  height: 1px;
+  width: auto;
+  transform: scaleY(0.5);
+  left: 40rpx;
+  right: 40rpx;
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  display: inline-block;
+
+}

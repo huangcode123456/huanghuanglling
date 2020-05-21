@@ -1,0 +1,19 @@
+<!--pages/class/myCenter/profileEdit/profileEdit.wxml-->
+<g-form model="{{formData}}" rules="{{rules}}"
+  validateType="{{validateType}}"
+  primary-text="保 存"
+  bind:submit="handleFormSubmit"
+>
+  <view slot="content">
+    <g-box>
+      <g-input id="userName" label="姓名" value="{{formData.userName}}" bind:change="handleChange"/>
+      <!-- <g-input id="idcard" label="证件号码" maxlength="18" value="{{formData.idcard}}" bind:change="idCardChange" /> -->
+      <g-input id="phone" label="手机号码" maxlength="11" type="number" value="{{formData.phone}}" bind:change="handleChange" />
+      <g-picker id="sex" label="性别" value="{{formData.sex}}" range="{{genderRange}}" bind:change="handleChange"/>
+      <g-input id="age" label="年龄" maxlength="4" type="number" value="{{formData.age}}" bind:change="handleChange" />
+      <g-picker id="deptName" label="所在部门" value="{{formData.deptName}}" range="{{selectDeptRange}}" bind:change="handleChange"/>
+      <!-- <g-input id="origin" label="籍贯" value="{{formData.origin}}" bind:change="handleChange" /> -->
+      <g-input id="address" label="居住地址" value="{{formData.address}}" bind:change="handleChange" />
+    </g-box>
+  </view>
+</g-form>

@@ -1,0 +1,10 @@
+<!--pages/class/students/invite/invite.wxml-->
+<view class='wrap-box'>
+    <image class='icon-st' src='/images/icon/tousu_white.svg'></image>
+    <view class='title'>{{title}}</view>
+    <view class='text'>{{text}}</view>
+</view>
+
+<g-box isBtnWrap>
+    <button  open-type="share">分享给微信好友</button>
+</g-box>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-cell": "/components/gsd-ui/g-cell/index",
+    "g-button-group": "/components/gsd-ui/g-button-group/index"
+  },
+  "navigationBarTitleText": "邀请学生/家长"
+}

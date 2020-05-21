@@ -1,0 +1,25 @@
+<!--pages/class/teacher/add/add.wxml-->
+<g-box fill>
+  <g-bar>
+    <g-search placeholder="请输入本校普通教师姓名" autofocus withText bind:confirm="searchSubmit"></g-search>
+  </g-bar>
+</g-box>
+
+
+<view>
+  <!-- 无数据 -->
+  <g-box wx:if="{{noData===true}}">
+    <g-requestTips type="null" text='没有找到该教师，请确认该教师已加入本校'  ></g-requestTips>
+  </g-box>
+
+  <!-- 列表 -->
+  <g-box wx:else>
+    <g-cell wx:for="{{list}}" wx:key='item' label="{{item.userName}}" desc="{{item.phone}}" to="/pages/class/teacher/details/details?readonly=0&userid={{item.userid}}&type=THR">
+      <view slot="prepend">
+        <g-image my-class="user-image" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2797894776,3276430764&fm=26&gp=0.jpg" />
+      </view>
+    </g-cell>
+  </g-box>
+
+
+</view> 

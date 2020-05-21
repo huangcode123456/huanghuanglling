@@ -1,0 +1,45 @@
+<!--pages/school/teacher/verifyList/verifyList.wxml-->
+
+
+<!-- 有数据 -->
+<g-box wx:if='{{noData}}'>
+ 
+    <view class="user-item" wx:for="{{list1}}" wx:key='item'>
+      <!-- 学生 -->
+      <g-cell wx:if="{{item.type=='CLS'}}" label="{{item.userName}}(电话:{{item.phone}})" desc="第一填报人" to="/pages/class/students/details/details?readonly=0&userid={{item.userid}}" access >
+      </g-cell>
+      <!-- 家长 -->
+      <g-cell wx:elif="{{item.type=='RPT'}}" label="{{item.userName}}(电话:{{item.phone}})" desc="共同填报人" to="/pages/class/students/details/details?readonly=0&userid={{item.userid}}"  access >
+      </g-cell>
+    </view>
+
+    <!-- <g-cell label="{{item.userName}}({{item.userNumber}})" desc="{{item.classId==null?'空':''}} {{item.type=='RPT'?'学生家长':'学生本人'}}" to="/pages/class/students/details/details?readonly=0&userid={{item.userid}}" has-prepend access>
+      <view slot="prepend">
+        <g-image my-class="user-image" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2797894776,3276430764&fm=26&gp=0.jpg" />
+      </view> 
+    </g-cell>-->
+</g-box>
+
+
+  <!-- 无数据 -->
+<g-box wx:else>
+    <g-requestTips type="null"  bind:tap="getDeptListWithNum" ></g-requestTips>
+</g-box>
+  <!-- <g-cell label="张老师" desc="高三1班 班主任" to="/pages/school/teacher/details/details" has-prepend >
+    <view slot="prepend">
+      <g-image my-class="user-image" src="http://img0.imgtn.bdimg.com/it/u=2042833036,3738659610&fm=26&gp=0.jpg" />
+    </view>
+    </g-cell> -->
+  <!-- <g-cell label="张老师" desc="高三1班 班主任" to="/pages/school/teacher/details/details" has-prepend >
+    <view slot="prepend">
+      <g-image my-class="user-image" src="http://img0.imgtn.bdimg.com/it/u=2042833036,3738659610&fm=26&gp=0.jpg" />
+    </view>
+  </g-cell>
+  <g-cell label="张老师" desc="高三2班 班主任" to="/pages/school/teacher/details/details" has-prepend >
+    <view slot="prepend">
+      <g-image my-class="user-image" src="http://img0.imgtn.bdimg.com/it/u=2042833036,3738659610&fm=26&gp=0.jpg" />
+    </view>
+  </g-cell> -->
+
+
+

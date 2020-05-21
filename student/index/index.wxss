@@ -1,0 +1,62 @@
+/* pages/student/index/index.wxss */
+@import '/components/gsd-ui/static/style/main.wxss';
+
+
+.header {
+  padding: 20rpx 20rpx 50rpx;
+  color: #fff;
+  background-image: linear-gradient(to bottom, #0f59a4 36%, #2775b6 100%);
+  border-bottom-left-radius: 100rpx 20rpx;
+  border-bottom-right-radius: 100rpx 20rpx;
+}
+.header .userInfo {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+.userInfo .avatar{
+  width: 68rpx;
+  height: 68rpx;
+  background: #2f70c5;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-right: 10rpx;
+}
+.header .schoolTitle{
+  margin-top: 20rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #fff;
+  line-height: 56rpx;
+  text-align: center
+}
+.header .schoolSubTitle{
+    text-align: center;
+    margin-top: 20rpx;
+}
+
+/* 菜单 */
+.menu-item{
+  display:flex;
+  align-items: center;
+}
+.menu-item .icon{
+  width:90rpx;
+  height:90rpx;
+}
+.menu-item .text{
+  font-size:32rpx;
+  color: #111;
+  flex: 1;
+  padding: 0 50rpx;
+}
+.menu-item .arrow-right{
+  color: #ccc;
+  font-size: 30rpx;
+}
+
+.footer {
+  padding: 30rpx 0 60rpx 0;
+  text-align: center;
+  line-height: 40rpx;
+}

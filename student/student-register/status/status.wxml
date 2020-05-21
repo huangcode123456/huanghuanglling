@@ -1,0 +1,42 @@
+<!--pages/student/student-register/status/status.wxml-->
+<view class="header">
+  <view class="userInfo" >
+    <image class="avatar" src="http://img0.imgtn.bdimg.com/it/u=2042833036,3738659610&fm=26&gp=0.jpg"></image>
+    <view class="userName" >{{userInfo.userName}}</view>
+  </view>
+
+  <!-- 审核中 -->
+  <view wx:if="{{status==1}}">
+    <view class="icon"><g-icon type="info-o" size="160"/></view>
+    <view class="schoolTitle">您的账号正在审核中...</view>
+  </view>
+
+  <!-- 通过 -->
+  <view wx:elif="{{status==2}}">
+    <view class="icon"><g-icon type="success" size="160"/></view>
+    <view class="schoolTitle">恭喜您！您的账号审核通过</view>
+  </view>
+  
+  <!-- 拒绝 -->
+  <view wx:else>
+    <view class="icon"><g-icon type="info-o" size="160"/></view>
+    <view class="schoolTitle">抱歉！您的账号审核未通过</view>
+  </view>
+</view>
+
+<view style="margin-top:100rpx;">
+  <!-- 审核中 -->
+  <g-box wx:if="{{status==1}}" isBtnWrap>
+    <button bindtap="refresh">再次查询</button>
+  </g-box>
+
+  <!-- 通过 -->
+  <g-box wx:elif="{{status==2}}" isBtnWrap>
+    <button bindtap="goToLogin" type="primary">立即登录</button>
+  </g-box>
+
+  <!-- 拒绝 -->
+  <g-box wx:else isBtnWrap>
+    <button bindtap="goToRegister" type="primary">重新注册</button>
+  </g-box>
+</view>

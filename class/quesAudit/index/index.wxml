@@ -1,0 +1,102 @@
+<!--pages/class/quesAudit/index/index.wxml-->
+<view class="header">
+  <view class="schoolTitle">{{gradeName}}{{className}}</view>
+  <view class="schoolSubTitle">{{today}}问卷审核</view>
+</view>
+
+
+<!-- 未提交 -->
+<block wx:if="{{todayIsSubmit=='0'}}">
+  <g-box>
+      <g-cell label="学生问卷填报统计" label-type="title"></g-cell>
+      
+      <g-cell label="本班学生总数" has-append>
+        <view class='mr46' slot="append" wx:if="{{studentCount>0}}" >
+          <g-badge  count="{{studentCount}}" />
+        </view>
+        <view slot="append" wx:else  class='mr46 text-gray'>暂无</view>
+      </g-cell>
+
+      <g-cell label="今日更新填报数"  has-append>
+        <view class='mr46' slot="append" wx:if="{{curWriteCount>0}}" >
+          <g-badge  count="{{curWriteCount}}" />
+        </view>
+        <view slot="append" wx:else  class='mr46 text-gray'>暂无</view>
+      </g-cell>
+      <!-- <g-cell label="已提交问卷数量" has-append>
+        <view class='mr46' slot="append"  wx:if="{{submitCount>0}}" >
+          <g-badge count="{{submitCount}}" />
+        </view>
+        <view slot="append" wx:else  class='mr46 text-gray'>暂无</view>
+      </g-cell> -->
+  </g-box>
+      
+  <g-box>
+      <g-cell label="学生问卷状态统计" label-type="title"></g-cell>
+      <g-cell label="待审核名单"  to="/pages/class/quesAudit/listVerify/listVerify?class_id={{classId}}&status=0" to-type="to" access  has-append>
+        <view slot="append" wx:if="{{beApproveCount>0}}" >
+          <g-badge count="{{beApproveCount}}" />
+        </view>
+        <view slot="append" wx:else  class='text-gray'>暂无</view>
+      </g-cell>
+      <g-cell label="未填报名单"  to="/pages/class/quesAudit/list/list?class_id={{classId}}&status=1" to-type="to" access  has-append>
+        <view slot="append" wx:if="{{noWriteCount>0}}" >
+          <g-badge count="{{noWriteCount}}" />
+        </view>
+        <view slot="append" wx:else  class='text-gray'>暂无</view>
+      </g-cell>
+      <g-cell label="已驳回名单"  to="/pages/class/quesAudit/list/list?class_id={{classId}}&status=2" to-type="to" access  has-append>
+        <view slot="append" wx:if="{{noPassCount>0}}" >
+          <g-badge count="{{noPassCount}}" />
+        </view>
+        <view slot="append" wx:else  class='text-gray'>暂无</view>
+      </g-cell>
+      <g-cell label="已通过名单"  to="/pages/class/quesAudit/list/list?class_id={{classId}}&status=3" to-type="to" access  has-append>
+        <view slot="append" wx:if="{{successCount>0}}" >
+          <g-badge count="{{successCount}}" />
+        </view>
+        <view slot="append" wx:else  class='text-gray'>暂无</view>
+      </g-cell>
+  </g-box>
+
+  <g-box isBtnWrap >
+    <button bindtap="submission"  type="primary" disabled="{{isSubmit}}" >提交给学校管理员</button>
+  </g-box>
+
+</block>
+
+
+<!-- 已提交 -->
+<block wx:else>
+    <g-box>
+      <g-tips status="warn">今日本班学生问卷已提交！</g-tips>
+    </g-box>
+    
+    <g-box>
+      <g-cell label="学生问卷生成统计" label-type="title"></g-cell>
+      <g-cell label="本班学生总数" has-append>
+        <view class='mr46' slot="append" wx:if="{{queryupStudentCount>0}}" >
+          <g-badge  count="{{queryupStudentCount}}" />
+        </view>
+        <view slot="append" wx:else  class='mr46 text-gray'>暂无</view>
+      </g-cell>
+
+      <!-- 已生成问卷名单  -->
+      <g-cell  wx:if="{{queryupnum>0}}"  label="已生成问卷名单" to="/pages/class/quesAudit/listSubmitted/listSubmitted?class_id={{classId}}&status=1" to-type="to" access  has-append>
+        <view slot="append"> <g-badge  count="{{queryupnum}}" /></view>
+      </g-cell>
+      <g-cell wx:else label="已生成问卷名单"  has-append> <view slot="append" class='mr46 text-gray'>暂无</view></g-cell>
+
+      <!-- 待生成问卷名单 -->
+      <g-cell wx:if="{{querynotupnum>0}}" label="待生成问卷名单" to="/pages/class/quesAudit/listSubmitted/listSubmitted?class_id={{classId}}&status=0" to-type="to" access  has-append>
+        <view slot="append" ><g-badge  count="{{querynotupnum}}" /></view>
+      </g-cell>
+      <g-cell wx:else label="待生成问卷名单"  has-append> <view slot="append" class='mr46 text-gray'>暂无</view></g-cell>
+
+  </g-box>
+  <g-box isBtnWrap >
+    <button bindtap="getQueryStudentNumRes"  type="primary" >再次查询</button>
+  </g-box>
+</block>
+
+

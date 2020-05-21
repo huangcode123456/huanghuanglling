@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-cell": "/components/gsd-ui/g-cell/index",
+    "g-form": "/components/gsd-ui/g-form/index",
+    "g-select2": "/components/gsd-ui/g-select2/index",
+    "g-requestTips": "/components/gsd-ui/g-requestTips/index"
+    
+  }
+}

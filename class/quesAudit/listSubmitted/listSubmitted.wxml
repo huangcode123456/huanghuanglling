@@ -1,0 +1,29 @@
+<!--pages/class/quesAudit/listSubmitted/listSubmitted.wxml-->
+<view class="header">
+  <view class="schoolTitle">{{gradeName}}{{className}}</view>
+  <view class="schoolSubTitle">{{status==1?'已':'待'}}生成问卷名单({{list.length}}人)</view>
+</view>
+
+
+<!-- 无数据 -->
+<g-box wx:if="{{noData}}">
+    <g-requestTips type="null"  bind:tap="getList"></g-requestTips>
+</g-box>
+<!-- 有数据 -->
+<block  wx:else>
+  <g-box >
+      <!-- 未生成列表仅显示名单，没有下一级跳转 -->
+      <block wx:if="{{status=='0'}}">
+        <g-cell  wx:for="{{list}}" wx:key='{{item}}'  label="{{item.userName}}(电话:{{item.phone}})"  >
+        </g-cell>
+      </block>
+
+      <!-- 已生成名单，跳转下一级查看生成问卷详情 -->
+      <block wx:else>
+        <g-cell  wx:for="{{list}}" wx:key='{{item}}' label="{{item.userName}}(电话:{{item.phone}})" to="/pages/public/questionnaireByGenerated/questionnaireByGenerated?id={{item.id}}&type=S" to-type="to" access >
+      </g-cell>
+      </block>
+  </g-box>
+  <view wx:if="{{list.length>0}}" class="text-data-end">到底了</view>
+  
+</block>

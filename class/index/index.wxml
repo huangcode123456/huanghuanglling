@@ -1,0 +1,74 @@
+<!--pages/class/index/index.wxml-->
+<view class="page">
+ 
+  <view class="header">
+    <view class="userInfo" bindtap="toCenter">
+      <view class="avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="userName" >{{userInfo.isAuth ? userInfo.name : '个人中心'}}</view>
+    </view>
+    <view class="schoolTitle">{{orgName}}</view>
+    <view class="schoolSubTitle">{{details}}</view>
+  </view>
+
+
+  <!-- 菜单 -->
+  
+  <!-- 副班主任相关功能暂停 -->
+  <!-- <g-box wx:if="{{userInfo.type!='THR'}}">
+    <g-cell>
+      <navigator class="menu-item" url="/pages/class/teacher/list/list">
+        <image src='/images/icon/jiuye.svg' class="icon"></image>
+        <view class="text">副班主任管理</view>
+        <g-icon class="arrow-right" type="arrow-right"></g-icon> 
+      </navigator>
+    </g-cell>
+  </g-box> -->
+
+   <g-box wx:if="{{userInfo.type!='THR'}}">
+    <g-cell>
+      <navigator class="menu-item" url="{{'/pages/class/students/list/list?orgName='+userInfo.orgName+'&gradeName='+userInfo.gradeName+'&className='+userInfo.className}}">
+        <image src='/images/icon/gonggongfuwu.svg' class="icon"></image>
+        <view class="text">学生列表</view>
+        <g-icon class="arrow-right" type="arrow-right"></g-icon> 
+      </navigator>
+    </g-cell>
+  </g-box>
+
+
+  <g-box wx:if="{{userInfo.type!='THR'}}">
+    <g-cell>
+      <navigator class='menu-item' url="/pages/class/quesAudit/index/index" >
+        <image src='/images/icon/fangjiaanpai.svg' class="icon"></image>
+        <view class="text">问卷审核</view>
+        <g-icon class="arrow-right" type="arrow-right"></g-icon> 
+      </navigator>
+    </g-cell>
+  </g-box>
+
+  <g-box>
+    <g-cell>
+      <navigator class='menu-item' url="/pages/school/questionnaire/info-collection/info-collection">
+        <image src='/images/icon/jiaoyu.svg' class="icon"></image>
+        <view class="text">问卷填报</view>
+        <g-icon class="arrow-right" type="arrow-right"></g-icon> 
+      </navigator>
+    </g-cell>
+  </g-box>
+
+  <g-box>
+    <g-cell>
+      <navigator class="menu-item" url="/pages/school/questionnaire/list/list">
+        <image src='/images/icon/shuiwu.svg' class="icon"></image>
+        <view class="text">填报记录</view>
+        <g-icon class="arrow-right" type="arrow-right"></g-icon> 
+      </navigator>
+    </g-cell>
+  </g-box>
+
+  
+  <view class="footer clr-footer">
+    <view>数据采集系统</view>
+  </view>
+</view>

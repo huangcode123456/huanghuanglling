@@ -1,0 +1,60 @@
+<view  class="page">
+   
+  <g-box >
+	    <g-cell wx:if='{{info.type}}' label="{{info.type=='CLS'?'第一填报人':'共同填报人'}}" label-type="title"></g-cell>
+
+      <g-cell my-label-class='user-info-label' flex-start has-append label="学生姓名" wx:if="{{info.userName!=null}}">
+        <view slot="append">
+            <view class="fnt-h5  fnt-right">{{info.userName}}</view>
+          </view>
+      </g-cell>
+
+      <g-cell my-label-class='user-info-label' flex-start has-append label="电话" wx:if="{{info.phone!=null}}">
+        <view slot="append">
+            <view class="fnt-h5  fnt-right">{{info.phone}}</view>
+          </view>
+      </g-cell>
+      
+
+      <!-- <g-cell my-label-class='user-info-label' flex-start has-append label="学号" wx:if="{{info.userNumber!=null}}">
+        <view slot="append">
+            <view class="fnt-h5  fnt-right">{{info.userNumber}}</view>
+          </view>
+      </g-cell> -->
+      <g-cell my-label-class='user-info-label' flex-start has-append label="所在年级" wx:if="{{info.gradeId!=null}}">
+        <view slot="append">
+            <view class="fnt-h5  fnt-right">{{info.gradeId}}</view>
+          </view>
+      </g-cell>
+      <g-cell wx:if="info.gradeId" my-label-class='user-info-label' flex-start has-append label="所在班级" wx:if="{{info.classId!=null}}">
+        <view slot="append">
+            <view class="fnt-h5  fnt-right">{{info.classId}}</view>
+          </view>
+      </g-cell>
+      <g-cell my-label-class='user-info-label' flex-start has-append label="性别" wx:if="{{info.sex!=null}}">
+        <view slot="append">
+            <view class="fnt-h5  fnt-right">{{info.sex=='M'?'男':info.sex=='F'?'女':''}}</view>
+          </view>
+      </g-cell>
+      <g-cell my-label-class='user-info-label' flex-start has-append label="年龄" wx:if="{{info.age!=null}}">
+        <view slot="append">
+            <view class="fnt-h5  fnt-right">{{info.age}}</view>
+          </view>
+      </g-cell>
+  </g-box>
+ 
+    <!-- 待审核界面操作按钮 -->
+    <view wx:if="{{readonly==0}}" >
+      <g-box isBtnWrap>
+      <button  type="primary" data-type='agree' bindtap="updateUserType">通过</button>
+      </g-box>
+      <g-box isBtnWrap>
+        <button data-type='refuse' bindtap='updateUserType' >拒绝</button>
+      </g-box>
+    </view>
+    <view wx:elif="{{readonly==1}}">
+      <g-box isBtnWrap >
+          <button  bindtap="del" >删 除</button>
+      </g-box>
+    </view>
+</view>

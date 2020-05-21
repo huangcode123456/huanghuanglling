@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "问卷详情",
+  "usingComponents": {
+    "g-badge": "/components/gsd-ui/g-badge/index",
+    "g-icon": "/components/gsd-ui/g-icon/index",
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-cell": "/components/gsd-ui/g-cell/index",
+    "g-button-group": "/components/gsd-ui/g-button-group/index",
+    "g-image": "/components/gsd-ui/g-image/index"
+  }
+}

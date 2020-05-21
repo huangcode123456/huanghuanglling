@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "g-form": "/components/gsd-ui/g-form/index",
+    "g-input": "/components/gsd-ui/g-input/index",
+    "g-box": "/components/gsd-ui/g-box/index"
+  },
+  "navigationBarTitleText": "昌平区学校数据统计管理系统"
+}

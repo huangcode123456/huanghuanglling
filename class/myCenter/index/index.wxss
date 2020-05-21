@@ -1,0 +1,34 @@
+/* pages/class/myCenter/index/index.wxss */
+@import '/components/gsd-ui/static/style/main';
+.userCard {
+  padding: 20rpx 0 100rpx;
+  color: #fff;
+  background-image: linear-gradient(to bottom, #0f59a4 36%, #2775b6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.userCard .avatar{
+  width: 120rpx;
+  height: 120rpx;
+  background: #2f70c5;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.userCard .userName{
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.btnContainer{
+  text-align: center;
+  width: 750rpx;
+}
+.halfBtn{
+  width: 225rpx;
+  margin: 10rpx 50rpx;
+  display: inline-flex;
+  text-align: center;
+}

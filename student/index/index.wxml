@@ -1,0 +1,48 @@
+<!--pages/student/index/index.wxml-->
+<view class="page">
+ 
+  <view class="header">
+    <view class="userInfo" bindtap="toCenter">
+      <view class="avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="userName" >{{userInfo.isAuth ? userInfo.name : '个人中心'}}</view>
+    </view>
+    <view class="schoolTitle">{{userInfo.orgName}}</view>
+    <view class="schoolSubTitle">
+    <!-- {{userInfo.className==null?(userInfo.gradeName==null?"":userInfo.gradeName):userInfo.className}} -->
+    {{userInfo.gradeName}}{{userInfo.className}}
+    </view>
+  </view>
+
+
+  <!-- 菜单 -->
+  
+
+  <g-box>
+    <g-cell>
+      <navigator class='menu-item' url="/pages/school/questionnaire/info-collection/info-collection">
+        <image src='/images/icon/jiaoyu.svg' class="icon"></image>
+        <view class="text">问卷填报</view>
+        <g-icon class="arrow-right" type="arrow-right"></g-icon> 
+      </navigator>
+    </g-cell>
+  </g-box>
+
+  <g-box>
+    <g-cell>
+      <navigator class="menu-item" url="/pages/school/questionnaire/list/list">
+        <image src='/images/icon/shuiwu.svg' class="icon"></image>
+        <view class="text">填报记录</view>
+        <g-icon class="arrow-right" type="arrow-right"></g-icon> 
+      </navigator>
+    </g-cell>
+  </g-box>
+   
+
+    
+
+  <view class="footer clr-footer">
+    <view>数据采集系统</view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/class/statis/details/details.wxml-->
+<view class="header">
+  <view class="schoolTitle">每日学生体温检测表</view>
+  <view class="schoolSubTitle">小书童2020年2月2日</view>
+</view>
+<g-box>
+  <g-cell label="姓名" desc="小书童"></g-cell>
+  <g-cell label="性别" desc="男"></g-cell>
+  <g-cell label="家庭住址" my-desc-class="text-moreline" desc="湖南省长沙市岳麓区观沙岭街道湖南省长沙市岳麓区观沙岭街道"></g-cell>
+</g-box>
+
+
+<view  >
+  <g-box isBtnWrap>
+    <button  type="primary" bindtap="pass">通 过</button>
+  </g-box>
+  <g-box isBtnWrap>
+    <button bindtap='refuse' >驳 回</button>
+  </g-box>
+</view>
+

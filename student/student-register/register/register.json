@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "g-form": "/components/gsd-ui/g-form/index",
+    "g-input": "/components/gsd-ui/g-input/index",
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-cell": "/components/gsd-ui/g-cell/index",
+    "g-picker": "/components/gsd-ui/g-picker/index",
+    "g-radio-group": "/components/gsd-ui/g-radio-group/index"
+  },
+  "navigationBarTitleText": "学生家长注册"
+}

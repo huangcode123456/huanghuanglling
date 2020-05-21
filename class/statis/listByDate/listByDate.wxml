@@ -1,0 +1,45 @@
+<!--pages/class/statis/listByDate/listByDate.wxml-->
+<view class="header">
+  <view class="schoolTitle">每日学生体温检测表</view>
+  <view class="schoolSubTitle">初二2班</view>
+</view>
+
+
+ <g-box>
+    <g-cell label="2月09日 (20人)" to="/pages/class/statis/listByStudents/listByStudents" to-type="to" access hasAppend>
+      <view slot="append" >
+        <text class="text-gray">未提交</text>
+      </view>
+    </g-cell>
+    <g-cell label="2月09日 (53人)" to="/pages/class/statis/listByStudents/listByStudents" to-type="to" access has-append>
+      <view slot="append">
+        <text >已提交</text>
+      </view>
+    </g-cell>
+    <g-cell label="2月09日 (53人)" to="/pages/class/statis/listByStudents/listByStudents" to-type="to" access has-append>
+      <view slot="append">
+        <text >已提交</text>
+      </view>
+    </g-cell>
+    <g-cell label="2月09日 (53人)" to="/pages/class/statis/listByStudents/listByStudents" to-type="to" access has-append>
+      <view slot="append">
+        <text class="text-red">已驳回</text>
+      </view>
+    </g-cell>
+    <g-cell label="2月09日 (53人)" to="/pages/class/statis/listByStudents/listByStudents" to-type="to" access has-append>
+      <view slot="append">
+        <text >已提交</text>
+      </view>
+    </g-cell>
+    <g-cell label="2月09日 (53人)" to="/pages/class/statis/listByStudents/listByStudents" to-type="to" access has-append>
+      <view slot="append">
+        <text >已提交</text>
+      </view>
+    </g-cell>
+    <g-cell label="2月09日 (53人)" to="/pages/class/statis/listByStudents/listByStudents" to-type="to" access has-append>
+      <view slot="append">
+        <text class="text-red">已驳回</text>
+      </view>
+    </g-cell>
+</g-box>
+

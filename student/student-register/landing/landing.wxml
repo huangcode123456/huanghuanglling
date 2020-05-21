@@ -1,0 +1,21 @@
+<!--pages/student/student-register/landing/landing.wxml-->
+<view class="header">
+  <view class="userInfo" >
+    <image class="avatar" src="http://img0.imgtn.bdimg.com/it/u=2042833036,3738659610&fm=26&gp=0.jpg"></image>
+    <view class="userName" >{{userName}}老师邀请您加入：</view>
+  </view>
+
+  <view class="schoolTitle">{{orgName}}</view>
+  <view class="schoolSubTitle">
+    {{gradeName}}{{className}}
+  </view>
+</view>
+
+<view style="margin-top:100rpx;">
+  <g-box isBtnWrap wx:if="{{isShow}}">
+    <button bindtap="goToRegister" disabled="{{disabled}}" type="primary">接受邀请</button>
+  </g-box>
+  <!-- <g-box isBtnWrap>
+    <button bindtap="goToLogin">已有账号</button>
+  </g-box> -->
+</view>

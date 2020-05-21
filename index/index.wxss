@@ -1,0 +1,60 @@
+/* pages/index/index.wxss */
+@import '../../components/gsd-ui/static/style/main';
+.btn-wrap {
+    margin:50rpx 50rpx 0;
+}
+.mt30{
+  margin-top: 30rpx;
+}
+page{
+  height: 100vh;
+}
+.box{
+  text-align: center;
+  background-image: linear-gradient(-180deg, #EEEEEE 0%, #F7FAFD 0%, #EAF1F4 100%);
+  min-height: 100%;
+  width: 100%;
+  padding-bottom:30rpx;
+  box-sizing: border-box;
+}
+.imgZ{
+ 
+  width: 429rpx;
+  height: 350rpx;
+  
+}
+.imgbox{
+  padding-top: 50rpx;
+  width: 100%;
+  text-align: center
+}
+.title{
+  font-size: 48rpx;
+  color: #0F59A4;
+  margin: 30rpx 0;
+  letter-spacing: 0rpx;
+  font-family: PingFangSC-Semibold;
+}
+.content{
+  font-size: 32rpx;
+  color: #0F59A4 ;
+  margin-top: 30rpx;
+  width:68%;
+  margin:0 auto;
+  line-height: 44rpx;
+  letter-spacing: 1.68rpx;
+  font-family: PingFangSC-Regular;
+}
+.foot{
+  font-size: 32rpx;
+  color: #BBBBBB;
+  position: fixed;
+  bottom: 60rpx;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 2rpx;
+  font-family: PingFangSC-Medium;
+}
+.btn~.btn{
+  margin-top: 30rpx;
+}

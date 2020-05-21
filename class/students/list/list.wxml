@@ -1,0 +1,62 @@
+<!--pages/class/students/list/list.wxml-->
+<view class="header">
+  <view class="schoolTitle">{{options.orgName}}</view>
+  <view class="schoolSubTitle">{{options.gradeName}}{{options.className}}</view>
+  <!-- （{{formData.length}}名） -->
+  <view class="schoolSubTitle">学生数:{{cls.length}} <text style="margin-left:20rpx;">账号数:{{list==''?0:list.length}}</text></view>
+</view>
+
+<g-box>
+  <g-cell label="邀请学生/家长注册" bindtap="goToInvite" access  has-append>
+  </g-cell>
+  <g-cell label="待审核名单"  to="/pages/class/students/verifyList/verifyList" to-type="to" access  has-append>
+    <view slot="append" wx:if="{{verifyTotal!=0}}">
+      <g-badge count="{{verifyTotal}}" />
+    </view>
+  </g-cell>
+</g-box>
+
+<g-box wx:if="{{noData}}">
+  <g-requestTips type="null"  bind:tap="getDeptListWithNum"></g-requestTips>
+</g-box>
+
+<g-box wx:else>
+  <g-checkbox-group id="checkValue" items="{{checkItems}}" value="{{checkValue}}" bind:change="handleChange" />
+
+  <!-- '/pages/school/schoolStructure/detailsByStudent/detailsByStudent?gradeName='+options.gradeName+'&className='+options.className+'&schoolName='+options.schoolName+'&userName='+item.userName+'&phone='+item.phone+'&sex='+item.sex+'&address='+item.address -->
+  <g-cell wx:for="{{list}}" wx:key="{{item}}" wx:if="{{item.type==leixing1 || item.type==leixing2}}" label="{{item.userName}}(电话:{{item.phone}})" arrow-text="{{item.type=='RPT'?'共同填报人':''}}" to="{{item.type=='CLS'?'/pages/class/students/details/details?delType='+'deleteStudent'+'&readonly='+'1'+'&userid='+item.userid:'/pages/class/students/details/details?delType='+'deleteInformant'+'&readonly='+'1'+'&userid='+item.userid}}" to-type="to" access >
+
+  </g-cell> 
+</g-box>
+<!-- 无数据 -->
+<!-- <g-box wx:if="{{noData}}">
+  <g-requestTips type="null"  bind:tap="getDeptListWithNum"></g-requestTips>
+</g-box> -->
+
+<!-- 列表 -->
+<!-- <g-box wx:else>
+  <view class="user-item" wx:for="{{list}}" wx:key='item'>
+    学生
+    <g-cell wx:if="{{item.type=='CLS'}}" label="{{item.userName}}(电话:{{item.phone}})" desc="第一填报人" to="/pages/class/students/details/details?delType=deleteStudent&readonly=1&userid={{item.userid}}" has-prepend access >
+      <view slot="prepend">
+        <g-image my-class="user-image" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2797894776,3276430764&fm=26&gp=0.jpg" />
+      </view>
+    </g-cell>
+    家长
+    <g-cell wx:elif="{{item.type=='RPT'}}" label="{{item.userName}}(电话:{{item.phone}})" desc="共同填报人" to="/pages/class/students/details/details?delType=deleteInformant&readonly=1&userid={{item.userid}}" has-prepend access >
+      <view slot="prepend">
+        <g-image my-class="user-image" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2797894776,3276430764&fm=26&gp=0.jpg" />
+      </view>
+    </g-cell>
+  </view>
+  
+</g-box> -->
+
+<!-- <view wx:if='{{list.length>0}}'>
+  <g-box  wx:if='{{noMore===false}}'  isBtnWrap>
+      <button bindtap="getList">加载更多</button>
+  </g-box>
+  <view wx:else class="text-data-end">到底了</view>
+</view> -->
+
+

@@ -1,0 +1,116 @@
+<!--pages/class/myCenter/index/index.wxml-->
+<view class="userCard">
+  <view class="userInfo" >
+    <view class="avatar">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="userName" >{{userInfo.userName}}</view>
+  </view>
+</view>
+<view style='margin-top:-100rpx'>
+  <g-box >
+    <!-- <g-cell flex-start has-prepend prepend-width="200rpx" >
+      <view slot="prepend">
+        <view class="fnt-h4">身份证号</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.idcard}}</view>
+      </view>
+    </g-cell> -->
+    <g-cell flex-start has-prepend prepend-width="200rpx" >
+      <view slot="prepend">
+        <view class="fnt-h4">手机号码</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.phone}}</view>
+      </view>
+    </g-cell>
+    <!-- <g-cell flex-start has-prepend prepend-width="200rpx" >
+      <view slot="prepend">
+        <view class="fnt-h4">居住地址</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.address}}</view>
+      </view>
+    </g-cell>
+    <g-cell flex-start has-prepend prepend-width="200rpx" wx:if="{{!isChild&&userInfo.remark!=null&&userInfo.remark!=''}}">
+      <view slot="prepend">
+        <view class="fnt-h4">与学生关系</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.remark==null?"":userInfo.remark}}</view>
+      </view>
+    </g-cell> -->
+    <!-- <g-cell flex-start has-prepend prepend-width="200rpx" wx:if="{{!isChild&&userInfo.childName!=null}}">
+      <view slot="prepend">
+        <view class="fnt-h4">学生姓名</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.childName}}</view>
+      </view>
+    </g-cell> -->
+    <g-cell flex-start has-prepend prepend-width="200rpx" wx:if="{{userInfo.orgName!=null}}">
+      <view slot="prepend">
+        <view class="fnt-h4">所在学校</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.orgName==null?"":userInfo.orgName}}</view>
+      </view>
+    </g-cell>
+    <g-cell flex-start has-prepend prepend-width="200rpx" wx:if="{{userInfo.gradeName!=null}}">
+      <view slot="prepend">
+        <view class="fnt-h4">所在年级</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.gradeName==null?"":userInfo.gradeName}}</view>
+      </view>
+    </g-cell>
+    <g-cell flex-start has-prepend prepend-width="200rpx" wx:if="{{userInfo.className!=null}}">
+      <view slot="prepend">
+        <view class="fnt-h4">所在班级</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.className==null?"":userInfo.className}}</view>
+      </view>
+    </g-cell>
+    <g-cell flex-start has-prepend prepend-width="200rpx" wx:if="{{userInfo.age!=null&&userInfo.age!='null'}}">
+      <view slot="prepend">
+        <view class="fnt-h4">{{isChild?'年　　龄':'学生年龄'}}</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.age}}</view>
+      </view>
+    </g-cell>
+    <g-cell flex-start has-prepend prepend-width="200rpx" wx:if="{{userInfo.sex!=null}}">
+      <view slot="prepend">
+        <view class="fnt-h4">{{isChild?'性　　别':'学生性别'}}</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.sex=='M'?'男':'女'}}</view>
+      </view>
+    </g-cell>
+    <g-cell flex-start has-prepend prepend-width="200rpx" wx:if="{{!isChild&&userInfo.remark!=null&&userInfo.remark!=''}}">
+      <view slot="prepend">
+        <view class="fnt-h4">与学生关系</view>
+      </view>
+      <view slot="content">
+        <view class="fnt-h4 clr-dk">{{userInfo.remark==null?"":userInfo.remark}}</view>
+      </view>
+    </g-cell>
+    
+  </g-box>
+</view>
+
+ 
+  <g-box>
+    <g-cell label="修改信息" access bind:tap="goToProfileEdit"></g-cell>
+    <!-- <g-cell label="重置密码" access bind:tap=""></g-cell> -->
+  </g-box>
+  <view class="btnContainer">
+    <g-box isBtnWrap>
+      <button bindtap="goToIndex">返　回</button>
+    </g-box>
+    <!-- <g-box isBtnWrap class="halfBtn">
+      <button bindtap="logout">登　出</button>
+    </g-box> -->
+  </view>

@@ -1,0 +1,2 @@
+/* pages/class/myCenter/profileEdit/profileEdit.wxss */
+@import '/components/gsd-ui/static/style/main';

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "学生和家长邀请",
+  "backgroundColorTop": "#0F59A4",
+  "navigationBarBackgroundColor": "#0F59A4",
+  "usingComponents": {
+    "g-box": "/components/gsd-ui/g-box/index"
+  }
+}

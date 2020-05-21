@@ -1,0 +1,27 @@
+<!--pages/class/login/login.wxml-->
+<view>
+    <view class='wrap-box'>
+        <image class='icon-st' src='/images/icon/yingshang_white.svg'></image>
+         <text class='txt'>{{texts}}</text>
+    </view>
+    <!-- <view style='margin-top:-125rpx'>
+        <g-form model="{{formData}}" rules="{{rules}}" validateType="{{validateType}}" primary-text="登 录" bind:submit="handleFormSubmit" bind:tap="bindGetUserInfo" disabled="{{!(formData.password && formData.name)}}">
+            <view slot="content">
+                <g-box>
+                    <g-input id="name" label="账号" placeholder="请输入账号" clearable value="{{formData.name}}" bind:input="handleChange" />
+                    <g-input id="password" label="密码" type="password" placeholder="请输入密码" clearable value="{{formData.password}}" bind:input="handleChange" />
+                </g-box>
+            </view>
+        </g-form>
+    </view> -->
+    <view >
+      <g-box isBtnWrap>
+        <button  type="primary" bindtap="openidlogin" >登 录</button>
+      </g-box>
+    </view>
+    
+    <view class='g-footer' style="position:relative;margin-top:10rpx">
+        <view>数据采集系统</view>
+    </view>
+    
+</view>

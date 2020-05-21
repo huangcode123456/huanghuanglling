@@ -1,0 +1,38 @@
+<!--pages/class/quesAudit/listVerify/listVerify.wxml-->
+<view class="header">
+  <view class="schoolTitle">{{gradeName}}{{className}}</view>
+  <view class="schoolSubTitle">待审核名单({{checkItems.length}}人)</view>
+</view>
+
+<!-- 无数据 -->
+<g-box wx:if="{{noData}}">
+    <g-requestTips type="null"  bind:tap="getList"></g-requestTips>
+</g-box>
+
+<!-- 有数据 -->
+<block wx:elif="{{checkItems.length>0}}">
+  <g-box>
+    <view class="check-item" wx:for="{{checkItems}}" wx:key='{{item}}'>
+      <g-checkbox checked='{{item.checked}}'  scale='large' height="{{60}}" name='{{item.id}}' bindchange="checkChange" />
+      <navigator class="item-content" url="/pages/public/questionnaire/questionnaire?id={{item.id}}&type=T&userName={{item.userName}}&readonly=0">
+        <view class="label">{{item.userName}}(电话:{{item.phone}})</view>
+        <g-icon type="arrow-right" class="arrow-right" size="{{26}}" />
+      </navigator>
+    </view>
+  </g-box>
+
+
+  <view  class="text-data-end">到底了</view>
+
+  <g-box fill noMargin fixed>
+      <view class="btn-group-verify" >
+        <view class="check-selectAll" bindtap="selectAll">
+          <g-checkbox  checked="{{checkAll}}"  scale='large' height="{{60}}" />
+          <text class="text"> 全选({{checkList.length}}/{{checkItems.length}})</text>
+        </view>
+
+        <button class="btn" disabled="{{checkList.length==0}}" type="primary" data-type='agree' bindtap="verify" >通 过</button>
+        <button class="btn" disabled="{{checkList.length==0}}" data-type='refuse' bindtap="verify" >驳 回</button>
+      </view>
+  </g-box>
+</block>

@@ -1,0 +1,52 @@
+<!--pages/class/statis/listByStudents/listByStudents.wxml-->
+<view class="header">
+  <view class="schoolTitle">每日学生体温检测表</view>
+  <view class="schoolSubTitle">2020年2月5日</view>
+</view>
+
+<g-box>
+    <g-cell label="已提交名单(34人)" label-type="title" arrow-text="导出"  access bind:tap="download"></g-cell>
+     <g-cell label="小书童（学号:10010）" to="/pages/class/statis/details/details" to-type="to" access hasAppend>
+      <view slot="append" >
+        <text class="text-gray">未审核</text>
+      </view>
+    </g-cell>
+     <g-cell label="小书童（学号:10010）" to="/pages/class/statis/details/details" to-type="to" access hasAppend>
+      <view slot="append" >
+        <text class="text-gray">未审核</text>
+      </view>
+    </g-cell>
+    <g-cell label="小书童（学号:10010）" to="/pages/class/statis/details/details" to-type="to" access has-append>
+      <view slot="append">
+        <text >已通过</text>
+      </view>
+    </g-cell>
+    <g-cell label="小书童（学号:10010）" to="/pages/class/statis/details/details" to-type="to" access has-append>
+      <view slot="append">
+        <text >已通过</text>
+      </view>
+    </g-cell>
+    <g-cell label="小书童（学号:10010）" to="/pages/class/statis/details/details" to-type="to" access has-append>
+      <view slot="append">
+        <text class="text-red">已退回</text>
+      </view>
+    </g-cell>
+    <g-cell label="未提交名单(20人)" label-type="title"></g-cell>
+     <g-cell label="小书童（学号:10010）" > </g-cell>
+     <g-cell label="小书童（学号:10010）" > </g-cell>
+</g-box>
+
+<!-- 被驳回提示 -->
+ <!-- <g-box >
+      <g-tips status="warn">今日提交被驳回：有学生信息不对，出现信息混乱，录入不完善等行为，请重新确认后提交</g-tips>
+</g-box> -->
+
+<!-- 提交 -->
+<g-box isBtnWrap >
+  <button bindtap="goToInvite" type="primary" >提交给学校管理员</button>
+</g-box>
+
+<!-- 已经提交提示 -->
+<!-- <g-box style="display:none">
+  <g-requestTips type="fail" size="mini" text='今日数据已提交审核'></g-requestTips>
+</g-box> -->

@@ -1,0 +1,49 @@
+<!--pages/class/quesAudit/list/list.wxml-->
+<view class="header">
+  <view class="schoolTitle">{{gradeName}}{{className}}</view>
+  <view class="schoolSubTitle">{{statusTitle}}({{list.length}}人)</view>
+</view>
+
+
+<!-- 无数据 -->
+<g-box wx:if="{{noData}}">
+    <g-requestTips type="null"  bind:tap="getList"></g-requestTips>
+</g-box>
+<!-- 有数据 -->
+<block  wx:else>
+  <g-box >
+      <!-- 未提交的列表仅显示名单，没有下一级跳转 -->
+      <block wx:if="{{status=='1'}}">
+        <g-cell  wx:for="{{list}}" wx:key='{{item}}'  label="{{item.userName}}(电话:{{item.phone}})"  >
+        </g-cell>
+      </block>
+
+      <!--未审核可跳转至下一级查看详情并且带审核操作
+          id为问卷id必传
+          type为问卷填报者类型（T为老师，S为学生）
+          userName为提交问卷的用户姓名 
+          readonly=0表示跳转到详情页审核操作可见-->
+      <!-- <block wx:elif="{{status=='0'}}">
+        <g-cell  wx:for="{{list}}" wx:key='{{item}}' label="{{item.userName}}(电话:{{item.phone}})" to="/pages/public/questionnaire/questionnaire?id={{item.id}}&type=S&userName={{item.userName}}&readonly=0" to-type="to" access >
+      </g-cell>
+      </block> -->
+
+      <!-- 审核驳回、审核通过的名单，均可跳转至下一级查看详情不可审核操作 
+            id为问卷id必传 
+            type为问卷填报者类型（T为老师，S为学生）
+            userName为提交问卷的用户姓名必传 
+            readonly=1表示跳转到详情页审核操作不可见，仅可看到审核结果 -->
+      <block wx:else>
+        <g-cell  wx:for="{{list}}" wx:key='{{item}}' label="{{item.userName}}(电话:{{item.phone}})" to="/pages/public/questionnaire/questionnaire?id={{item.id}}&type=S&userName={{item.userName}}&readonly=1" to-type="to" access >
+      </g-cell>
+      </block>
+  </g-box>
+  <view wx:if="{{list.length>0}}" class="text-data-end">到底了</view>
+  
+</block>
+
+
+
+
+
+

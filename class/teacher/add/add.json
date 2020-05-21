@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "g-icon": "/components/gsd-ui/g-icon/index",
+    "g-box": "/components/gsd-ui/g-box/index",
+    "g-cell": "/components/gsd-ui/g-cell/index",
+    "g-bar-item": "/components/gsd-ui/g-bar-item/index",
+    "g-bar": "/components/gsd-ui/g-bar/index",
+    "g-search": "/components/gsd-ui/g-search/index",
+    "g-requestTips": "/components/gsd-ui/g-requestTips/index"
+  },
+  "navigationBarTitleText": "添加副班主任"
+}

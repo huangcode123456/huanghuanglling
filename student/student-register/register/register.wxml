@@ -1,0 +1,55 @@
+<!--pages/student/student-register/register/register.wxml-->
+<view>
+    <view class='wrap-box'>
+        <image class='icon-st' src='/images/icon/yingshang_white.svg'></image>
+        <text class='txt'>{{orgName}}</text>
+        <text class='txt'>{{texts}}</text>
+    </view>
+    <view style='margin-top:-125rpx'>
+        <g-form model="{{formData}}" rules="{{rules}}" validateType="{{validateType}}" primary-text="注 册 " bind:submit="handleFormSubmit" >
+            <view slot="content">
+                <!-- <g-box>
+                  <g-cell label="请先选择身份类型" label-type="title"></g-cell>
+                  <g-picker id="accountType" label="您的身份" value="{{formData.accountType}}" range="{{accountTypeRange}}" bind:change="handleChange"/>
+                  <g-cell label="是否外籍" label-type="title"></g-cell>
+                  <g-radio-group id="radioA" items="{{checkItems}}" value="{{formData.radioA}}" bind:change="handleChange" bind:iconTap="handleTapIcon"/>
+                </g-box> -->
+
+                <!-- <g-box wx:if="{{isShow}}">
+                  <g-cell label="家长信息" label-type="title"></g-cell>
+                  <g-input id="jzname" disabled="{{disabled_show}}" label="家长姓名" placeholder="请输入家长的姓名" clearable value="{{formData.jzname}}" bind:input="handleChange" />
+                  <g-input id="phone" disabled="{{disabled_show}}" type="number" label="联系电话" maxlength="11" placeholder="请输入您的联系电话" clearable value="{{formData.phone}}" bind:input="handleChange" /> -->
+                  <!-- <g-input id="guanxi" disabled="{{disabled_show}}" label="与学生关系" placeholder="请输入家长与学生的关系" clearable value="{{formData.guanxi}}" bind:input="handleChange" /> -->
+
+                  <!-- <g-input id="origin" disabled="{{disabled_show}}" label="籍贯" placeholder="请输入您的籍贯" clearable value="{{formData.origin}}" bind:input="handleChange" /> -->
+                  <!-- <g-input id="address" disabled="{{disabled_show}}" label="居住地址" placeholder="请输入您的居住地址" clearable value="{{formData.address}}" bind:input="handleChange" />
+                  <g-input id="idCard" disabled="{{disabled_show}}" label="{{idacrd_title}}"  placeholder="{{idcard_tishi}}" clearable value="{{formData.idCard}}" bind:input="idcardChange" /> -->
+                  <!-- <g-input id="phone" disabled="{{disabled_show}}" type="number" label="手机号码" maxlength="11" placeholder="请输入您的手机号码" clearable value="{{formData.phone}}" bind:input="handleChange" /> -->
+                <!-- </g-box> -->
+                <g-box>
+                    <g-cell label="学生注册信息" label-type="title"></g-cell>
+                    <g-input id="userName" label="学生姓名" placeholder="请输入学生的姓名" clearable value="{{formData.userName}}" bind:input="handleChange" bindblur="handleNameChange"/>
+                    <!-- <g-input id="studentID" disabled="{{disabled_show}}" label="学生学号" maxlength="20" placeholder="请输入学生的学号" clearable value="{{formData.studentID}}" bind:input="handleChange" /> -->
+                    <g-input id="phone" type="number" label="手机号码" maxlength="11" placeholder="请输入您的手机号码" clearable value="{{formData.phone}}" bind:input="handleChange" />
+
+                    <g-input id="gradeName" disabled  label="学生年级" placeholder="" clearable value="{{gradeName}}" bind:input="handleChange" />
+                    <g-input id="className" disabled label="学生班级" placeholder="" clearable value="{{className}}" bind:input="handleChange" />
+                    <!-- <g-input id="idCard" disabled="{{disabled_show}}" wx:if="{{!isShow}}" label="{{idacrd_title}}" maxlength="18" placeholder="{{idcard_tishi}}" clearable value="{{formData.idCard}}" bind:input="idcardChange" /> -->
+                    <!-- <g-input id="phone" disabled="{{disabled_show}}" wx:if="{{!isShow}}" type="number" label="手机号码" maxlength="11" placeholder="请输入您的手机号码" clearable value="{{formData.phone}}" bind:input="handleChange" /> -->
+                    <g-input id="age" type="number" maxlength="2" label="学生年龄" placeholder="请输入学生年龄" clearable value="{{formData.age}}" bind:input="handleChange" />
+                    <g-picker id="sex" label="学生性别" value="{{formData.sex}}" range="{{sexTypeRange}}" bind:change="handleChange"/>
+                    <g-input id="remark" label="与学生关系" placeholder="请输入您与学生的关系" clearable value="{{formData.remark}}" bind:input="handleChange" />
+                    <!-- <g-input id="origin" disabled="{{disabled_show}}" wx:if="{{!isShow}}" label="籍贯" placeholder="请输入您的籍贯" clearable value="{{formData.origin}}" bind:input="handleChange" />
+                    <g-input id="address" disabled="{{disabled_show}}" wx:if="{{!isShow}}" label="居住地址" placeholder="请输入您的居住地址" clearable value="{{formData.address}}" bind:input="handleChange" /> -->
+                </g-box>
+                <!-- <g-box>
+                  <g-cell label="设置账号信息" disabled="{{disabled_show}}" label-type="title"></g-cell>
+                      <g-input id="phone" disabled="{{disabled_show}}" type="number" label="手机号码" maxlength="11" placeholder="请输入您的手机号码" clearable value="{{formData.phone}}" bind:input="handleChange" />
+                      <g-input id="password" disabled="{{disabled_show}}" label="密码" type="password" placeholder="请输入密码" clearable value="{{formData.password}}" bind:input="handleChange" />
+                      <g-input id="passwordConfirm" disabled="{{disabled_show}}" label="确认密码" type="password" placeholder="请再次输入密码" clearable value="{{formData.passwordConfirm}}" bind:input="handleChange" />
+                </g-box> -->
+            </view>
+        </g-form>
+
+    </view>
+</view>
