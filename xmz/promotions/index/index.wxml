@@ -1,0 +1,81 @@
+<!--pages/promotions/index/index.wxml-->
+<swiper class="xmz-banner" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{banner}}" wx:key="*this">
+    <swiper-item bindtap='detailsBtn' data-url="{{ item.toUrl}}">
+      <image class='xmz-banner-img' mode="aspectFill" src="{{item.img}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<!-- 主体部分 -->
+<view class="container" style="margin-top:-20rpx">
+    
+    <!-- 优惠券 -->
+    <block wx:if='{{count(coupnlist)>1}}'>
+    <view class="xmz-title">领券中心</view>
+    </block>
+    <view>
+   
+      <block wx:for="{{coupnlist}}" wx:key="*this">
+      <view class='xmz-coupon-item'>
+        <view class="coupon-amount">
+            <view class="amount">¥<text class="num">{{ item.coupon_price }}</text></view>
+            <view class="desc">购买指定产品可抵扣</view>
+        </view>
+        <view class="coupon-info">
+          <view class="title">{{ item.title }}</view>
+          <view class="deadline">截止日期:{{ item.end_time }}</view>
+          <block wx:if='{{item.lq_status == 1}}'>
+     
+           <view><text class="btn btn-haveReceived">已领取</text></view>
+          </block>
+          <block wx:else>
+          <view><text class="btn btn-receive" bindtap="lqBtn" data-list_id="{{item.id}}">立即领取</text></view>
+          </block>
+        </view>
+      </view>
+    </block>
+     
+    </view>
+
+    <!-- 优惠活动 -->
+    <block wx:if="{{yh_active}}">
+    <view class="xmz-title">优惠活动</view>
+    <view class="xmz-promotions">
+     <block wx:for="{{yh_active}}" wx:key="*this">
+      <navigator class="xmz-promotions-item" hover-class="none" url="/pages/promotions/details/details?list_id={{ item.id }}">
+         <image mode="aspectFill" class="pic" src="{{ item.image }}"></image>
+      </navigator>
+    </block>
+    
+      <!-- <navigator class="xmz-promotions-item" hover-class="none" url="/pages/promotions/details/details">
+         <image mode="aspectFill" class="pic" src="https://xmz.h5vx.cn/public/uploads/attach/2020/03/19/5e7376daa5e21.png"></image>
+      </navigator>
+      <navigator class="xmz-promotions-item" hover-class="none" url="/pages/promotions/details/details">
+         <image mode="aspectFill" class="pic" src="https://xmz.h5vx.cn/public/uploads/attach/2020/03/19/5e7376daa5e21.png"></image>
+      </navigator>
+      <navigator class="xmz-promotions-item" hover-class="none" url="/pages/promotions/details/details">
+         <image mode="aspectFill" class="pic" src="https://xmz.h5vx.cn/public/uploads/attach/2020/03/19/5e7376daa5e21.png"></image>
+      </navigator> -->
+    </view>
+    </block>
+     <!-- 营销活动 -->
+    <block wx:if="{{yx_active}}">
+    <view class="xmz-title">营销活动</view>
+    <view class="xmz-promotions">
+      <block wx:for="{{ yx_active}}" wx:key="*this">
+      <navigator class="xmz-promotions-item" hover-class="none" url="/pages/promotions/details/details?list_id={{ item.id }}">
+         <image mode="aspectFill" class="pic" src="{{ item.image }}"></image>
+      </navigator>
+      </block>
+      
+      <!-- <navigator class="xmz-promotions-item" hover-class="none" url="/pages/promotions/details/details">
+         <image mode="aspectFill" class="pic" src="https://xmz.h5vx.cn/public/uploads/attach/2020/03/19/5e7376daa5e21.png"></image>
+      </navigator> -->
+      
+    </view>
+    </block>
+
+</view>

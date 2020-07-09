@@ -1,0 +1,99 @@
+/* pages/HomeClean/homeClean.wxss */
+.main1{
+  width: 670rpx;
+  background:rgba(255,255,255,1);
+  border-radius:10rpx;
+  margin: 40rpx auto 20rpx auto;
+}
+
+.van-cell--large{
+  border-radius: 10rpx;
+}
+.van-cell--large .van-cell__title{
+  font-size:26rpx !important;
+  font-weight:400;
+  color:rgba(81,81,81,1);
+  line-height:50rpx;
+}
+.address{
+  font-size:24rpx;
+  font-weight:normal;
+  color:rgba(81,81,81,1);
+  /* line-height:50rpx; */
+  padding:var(--cell-vertical-padding,10px) var(--cell-horizontal-padding,16px);
+  padding-top: 0 !important;
+}
+
+.mr_address{
+  width:96rpx;
+  height:28rpx;
+  background:rgba(129,131,131,1);
+  font-size:18rpx;
+  font-weight:normal;
+  color:rgba(255,255,255,1);
+  line-height:28rpx;
+  text-align: center;
+  margin-left: 80rpx;
+}
+.chacao{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10rpx;
+}
+.icon{
+  width: 30rpx;
+  height: 30rpx;
+  /* border: 1px solid red; */
+}
+.van-cell {
+  border-radius: 10rpx;
+}
+
+.mt10{
+  margin-top: 10rpx;
+}
+.mb10{
+  margin-bottom: 10rpx;
+}
+
+
+.add{
+  width: 670rpx;
+  margin: 0 auto;
+  text-align: right;
+  padding-right: 65rpx;
+  font-size:20rpx;
+  font-weight:400;
+  text-decoration:underline;
+  color:rgba(129,131,131,1);
+  line-height:50rpx;
+}
+
+.lijiyuyue{
+  width:670rpx;
+  height:72rpx;
+  background:rgba(70,184,190,1);
+  border-radius:8rpx;
+  margin: 0 auto;
+
+  font-size:34rpx;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:72rpx;
+  text-align: center;
+  margin-top: 115rpx;
+}
+
+.note{
+  margin: 0 auto;
+  width:202rpx;
+  height:24rpx;
+  font-size:20rpx;
+  font-weight:normal;
+  text-decoration:underline;
+  color:rgba(81,81,81,1);
+  line-height:50rpx;
+  text-align: center;
+  margin-top: 28rpx;
+}

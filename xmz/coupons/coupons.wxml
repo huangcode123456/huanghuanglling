@@ -1,0 +1,40 @@
+<!--pages/coupons/coupons.wxml-->
+<view class="main" wx:for="{{datalist}}" wx:key="index">
+  <view class="main_back">
+    <view style="margin: 0 auto;">
+      <text class="icon">￥</text><text class="money">{{item.price}}</text>
+      <text class="note">{{item.note}}</text>
+    </view>
+  </view>
+  
+  <view class="main_right">
+    <view class="main_right_1">
+      <view class="title">{{item.title}}</view>
+      <view class="date">截至日期：{{item.date}}</view>
+      <block wx:if="{{ item.status != 1 }}">
+           <view class="btn" bindtap="showPopup" data-id="{{ item.list_id }}">核销</view>
+      </block>
+      <view wx:if="{{item.status == 0}}" class="btn">已领取</view>
+      <view wx:if="{{item.status == 1}}" class="no_btn">已使用</view>
+    </view>
+  </view>
+
+  <view class="back_right"></view>
+</view>
+
+
+
+<!-- 报名弹窗 -->
+<van-popup show="{{popupShow}}"  adjust-position position="bottom"  bind:close="onClose">
+    <view class="xmz-signup-box">
+       <van-field
+        data-id='code'
+        value="{{formData.code }}"
+        label="核销码："
+        type='text'
+        bind:change="onChange"
+      />
+  
+      <bottom bindtap='signupSend' class='btn'>立即核销</bottom>
+    </view>
+</van-popup>

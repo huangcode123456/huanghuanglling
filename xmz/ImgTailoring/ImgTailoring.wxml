@@ -1,0 +1,6 @@
+<!--pages/ImgTailoring/ImgTailoring.wxml-->
+<image-cropper id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut"></image-cropper>
+
+<view class="btn_f">
+  <button class="btn" bindtap="btn">确定</button>
+</view>

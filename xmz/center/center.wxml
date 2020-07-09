@@ -1,0 +1,62 @@
+<!--pages/center/center.wxml-->
+<view class="main1">
+  <van-cell value="{{ level }}" is-link link-type="navigateTo"
+  url="/pages/membersLevel/membersLevel">
+    <view slot="title">
+      <view class="chacao">
+        <image src="https://xmz.h5vx.cn/img/xiang/dengji.png" class="img"></image>等级
+      </view>
+    </view>
+  </van-cell>
+  <van-cell value="{{ points }}" is-link link-type="navigateTo"
+  url="/pages/pointsMall/index/index">
+    <view slot="title">
+      <view class="chacao">
+        <image src="https://xmz.h5vx.cn/img/xiang/jifen.png" class="img"></image>积分
+      </view>
+    </view>
+  </van-cell>
+   <van-cell value="" is-link link-type="navigateTo"
+  url="/pages/wddh/wddh">
+    <view slot="title">
+      <view class="chacao">
+        <image src="https://xmz.h5vx.cn/img/xiang/wodeduihuan.png" class="img"></image>我的兑换
+      </view>
+    </view>
+  </van-cell>
+   <van-cell  is-link link-type="switchTab"
+  url="/pages/store/index/index" border="{{ false }}">
+    <view slot="title">
+      <view class="chacao">
+        <image src="https://xmz.h5vx.cn/img/xiang/wodemendian.png" class="img"></image>我的门店
+      </view>
+    </view>
+  </van-cell>
+</view>
+
+<view class="main2">
+  <van-cell value="" is-link link-type="navigateTo"
+  url="/pages/wdbm/wdbm">
+    <view slot="title">
+      <view class="chacao">
+        <image src="https://xmz.h5vx.cn/img/xiang/wodebaoming.png" class="img"></image>我的报名
+      </view>
+    </view>
+  </van-cell>
+  <van-cell value="" is-link link-type="navigateTo"
+  url="/pages/coupons/coupons">
+    <view slot="title">
+      <view class="chacao">
+        <image src="https://xmz.h5vx.cn/img/xiang/wodeyouhuiquan.png" class="img"></image>我的优惠券
+      </view>
+    </view>
+  </van-cell>
+   <van-cell value="" is-link link-type="navigateTo"
+  url="/pages/data/data" border="{{ false }}">
+    <view slot="title">
+      <view class="chacao">
+        <image src="https://xmz.h5vx.cn/img/xiang/wodeziliao.png" class="img"></image>我的资料
+      </view>
+    </view>
+  </van-cell>
+</view>

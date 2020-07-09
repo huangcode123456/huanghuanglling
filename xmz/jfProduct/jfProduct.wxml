@@ -1,0 +1,86 @@
+<!--pages/jfProduct/jfProduct.wxml-->
+<view>
+  <!-- 轮播图 -->
+
+  <view class="container">
+    <view class="page-body">
+      <view class="page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{datalist.data.goodslist.slider_image}}" wx:key="index">
+            <swiper-item>
+              <view class="swiper-item {{item}}">
+                <image class="lunbo" src="{{item}}"></image>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+
+  <!-- 文本 -->
+  <view class="main">
+    <view class="main_title">
+      <view class="text">{{datalist.dd.xx}}</view>
+      <view class="main_title_fx rela"  bindtap="onShareAppMessage">
+        <!-- <button class="btn-share" open-type="share"></button> -->
+        <button class="btn-wxshare" open-type="share" hover-class="none">
+          <text class="btn-share">分享</text>
+        </button>
+        <!-- <image class="fx" src="https://xmz.h5vx.cn/img/huanglaoshi/fx.png"></image> -->
+      </view>
+    </view>
+    <view class="details">
+      <view>
+        <text class="jifen_num">{{datalist.dd.needjf}}</text>
+        <text class="jifen_font">积分</text>
+        <text class="jiazhi">价值：{{datalist.data.goodslist.ot_price}}</text>
+      </view>
+      <view class="duihuan" bindtap="showPopup">我要兑换</view>
+    </view>
+  </view>
+  <!-- 兑换须知 -->
+  <view>
+    <view class="dhxz">— 兑换须知 —</view>
+    <!-- <view class="dhxz-body">1、使用积分兑换的产品一旦兑换完成，不支持取消兑换，积分不予退还，请在兑换前谨慎选择兑换产品。若因不可抗力，导致订单无法交易成功，订单将被取消，积分将返还回原支付账户。2、请如实、正确填写收货地址，产品发出前如有问题及时找官方人员沟通修改，如因用户提供地址有误造成产品无法递送而退回的，视为用户自动放弃该产品，积分不予退还。3、西门子家电将在兑换成功10个工作日内安排快递产品，用户可在个人中心查看发货状态。</view> -->
+  </view>
+  <view style="margin-left:18rpx;margin-right:15rpx;background:#FFFFFF;">
+    <rich-text style="margin-left:20rpx;margin-right:20rpx;" nodes="{{ datalist.data.goodslist.description }}"></rich-text> 
+  </view>
+
+  <van-popup show="{{ show }}" position="bottom" custom-style="height: 60%;" bind:close="onClose">
+    <view class="dhxc">
+    
+      <view class="dhxc_head" wx:if="{{user!=''}}">
+        <view class="weui-cell weui-cell_input">
+          <view style="display:flex;margin-right:20rpx;justify-content:space-between" class="border">
+            <view style="min-width:200rpx;display:flex;">
+              <input style="display:flex;width:120rpx;" class="weui-input" value="{{user.name}}" maxlength="10" placeholder="请输入" disabled />
+              <text>{{ user.sex }}</text>
+            </view>
+            <input style="margin-left:20rpx;margin-top:5rpx;width:250rpx;" class="weui-input" value="{{user.phone}}" maxlength="11" placeholder="请输入手机号" disabled/>
+          </view>
+          <view style="font-size:12px;margin-left:20rpx;margin-top:10rpx;color:rgba(81,81,81,1);">{{user.address}}
+          </view>
+          <view>
+            <text class="mrdd">默认地址</text>
+            <text class="gg" bindtap="wdzl">更改</text>
+          </view>
+        </view>
+      </view>
+      <view class="dhxc_body">
+        <view class="dhdd" style="padding-top:10rpx">兑换订单</view>
+        <view class="bordertop ddlx" style="display:flex;justify-content:space-between">订单类型<text style="font-size:13px;font-family:FZZhongDengXian-Z07S;font-weight:400;color:rgba(81,81,81,1);">{{datalist.dd.lx}}</text></view>
+        <view class="bordertop ddlx" style="display:flex;justify-content:space-between">订单信息<text style="font-size:13px;font-weight:400;color:rgba(81,81,81,1);text-aling:right;align-self:flex-end">{{datalist.dd.xx}}</text></view>
+        <view class="bordertop ddlx" style="display:flex;justify-content:space-between">型号<text style="font-size:13px;color:rgba(139,138,139,1);">{{datalist.dd.xh}}</text></view>
+        <view class="bordertop ddlx" style="display:flex;justify-content:space-between">需支付积分<text style="color:rgba(34,167,196,1);font-size:19px;padding-bottom:40rpx;">{{datalist.dd.needjf}}</text></view>
+        <view class="pay" style="color:rgba(255,255,255,1);" bindtap="pay" data-listid="{{ list_id }}">
+          立即支付
+        </view>
+      </view>
+    </view>
+  </van-popup>
+  <!-- 兑换页面 -->
+  
+</view>

@@ -1,0 +1,33 @@
+<!--pages/membersLevel/membersLevel.wxml-->
+
+<view class="vip_card pt">
+  <view class="main">
+    <view class="title">普通会员</view>
+    <view class="content mt20">购任意西门子家电并注册产品，即可成为普通会员；</view>
+    <view class="note mt20">●可用积分兑换各类服务、礼品等；</view>
+  </view>
+</view>
+
+
+<view class="vip_card jk">
+  <view class="main">
+    <view class="title">金卡会员</view>
+    <view class="content mt20" style="line-height:30rpx;padding-right:20rpx;">5万以上积分或购西门子新品类产品（含嵌入式蒸烤）/高端冰箱（瓷蕴+嵌入） 可成为金卡会员；</view>
+    <view class="note mt20">●可免费预约各类服务；</view>
+    <view class="note">●可享受100天免费试用新品类产品；</view>
+    <view class="note">●为其量身定制会员活动；</view>
+  </view>
+</view>
+
+<view class="vip_card hk">
+  <view class="main">
+    <view class="title">黑卡会员</view>
+    <view class="content mt20">10万以上积分可成为黑卡会员，</view>
+    <view class="note mt20">●享专人专职服务（专属高级销售顾问，专属高级售后顾问等）</view>
+    <view class="note">●节日专属礼品；</view>
+    <view class="note">●星级大厨家宴；</view>
+    <view class="note">●量身定制会员活动，如冰箱收纳等；</view>
+    <view class="note">●100天免费试用新品类产品；</view>
+    <view class="note">●享专人专职服务（专属高级销售顾问，专属高级售后顾问等）</view>
+  </view>
+</view>

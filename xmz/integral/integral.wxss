@@ -1,0 +1,35 @@
+/* pages/integral/integral.wxss */
+.get{
+  width:670rpx;
+  /* height:301px; */
+  background:rgba(255,255,255,1);
+  box-shadow:0px 0px 15px 0px rgba(9,46,58,0.15);
+  border-radius:10px;
+  margin: 37rpx auto;
+}
+.title{
+  width:670rpx;
+  height:80rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  /* background: rgb(6, 188, 243); */
+  background:linear-gradient(0deg,rgb(75,186,190),rgb(11,156,158));
+  /* border: 1px solid red; */
+  line-height: 80rpx;
+  text-align: center;
+  font-size:16px;
+  font-family:FZHei-B01S;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+
+.content{
+  padding: 32rpx;
+  font-size:20rpx;
+  font-weight:bold;
+  color:rgba(81,81,81,1);
+  line-height:28rpx;
+}
+.content>view{
+  margin-bottom: 10rpx;
+}

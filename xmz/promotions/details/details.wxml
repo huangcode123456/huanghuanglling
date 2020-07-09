@@ -1,0 +1,124 @@
+<!--pages/promotions/details/details.wxml-->
+<swiper class="xmz-banner" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{banner}}" wx:key="*this">
+    <swiper-item>
+      <image class='xmz-banner-img' mode="aspectFill" src="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<!-- 主体部分 -->
+<view class="container" >
+
+  <!-- 标题相关 -->
+  <view class="main">
+    <view class="main_title">
+      <view class="text">{{ store_name }}</view>
+      <view class="main_title_fx rela"  bindtap="onShareAppMessage">
+        <!-- <button class="btn-share" open-type="share"></button> -->
+        <button class="btn-wxshare" open-type="share" hover-class="none">
+          <text class="btn-share">分享</text>
+        </button>
+        <!-- <image class="fx" src="https://xmz.h5vx.cn/img/huanglaoshi/fx.png"></image> -->
+      </view>
+    </view>
+    <view class="details">
+      <view>
+        <view class='hd-time'>活动时间:{{ time }}</view>
+        <view class="hd-time">已报名人数: {{ combin }}</view>
+      </view>
+        <block wx:if="{{sumbit ==2}}">
+            <text class="duihuan">已结束</text>
+        </block>
+         <block wx:if="{{sumbit ==1}}">
+            <text class="duihuan">已报名</text>
+        </block>
+        <block wx:if="{{sumbit ==0}}">
+           <text bindtap="showPopup" class="duihuan">我要报名</text>
+        </block>
+        <!-- 已报名按钮 -->
+        <text style="display:none" class="duihuan">已经报名</text>
+        <!-- <block wx:if="{{sumbit ==2}}">
+            <text class="btn-signup">已结束</text>
+        </block>
+         <block wx:if="{{sumbit ==1}}">
+            <text class="btn-signup">已报名</text>
+        </block>
+        <block wx:if="{{sumbit ==0}}">
+           <text bindtap="showPopup" class="btn-signup">我要报名</text>
+        </block>
+        <!-- 已报名按钮 -->
+        <!-- <text style="display:none" class="btn-haveSigned">已经报名</text> -->
+    </view>
+  </view>
+
+  <!-- <view class="xmz-details-header">
+    <view class="left">
+      <view class="title">{{ store_name }}</view>
+      <view class='time'>活动时间:{{ time }}</view>
+      <view class="total">已报名人数: {{ combin }}</view>
+    </view>
+    <view class="right"> -->
+      
+
+
+      <!-- <button class="btn-wxshare" open-type="share" hover-class="none">
+        <text class="btn-share">分享</text>
+      </button>
+      <view class="mt20"> -->
+        <!-- <blcok wx:if="{{ sumbit == true }}">
+        <text bindtap="showPopup" class="btn-signup">我要报名</text>
+        </block>
+        <blcok wx:else>
+        <text class="btn-signup">已报名</text>
+        </block> -->
+        <!-- <block wx:if="{{sumbit ==2}}">
+            <text class="btn-signup">已结束</text>
+        </block>
+         <block wx:if="{{sumbit ==1}}">
+            <text class="btn-signup">已报名</text>
+        </block>
+        <block wx:if="{{sumbit ==0}}">
+           <text bindtap="showPopup" class="btn-signup">我要报名</text>
+        </block> -->
+        <!-- 已报名按钮 -->
+        <!-- <text style="display:none" class="btn-haveSigned">已经报名</text>
+      </view>
+    </view>
+  </view> -->
+
+
+  <!-- 详情 -->
+  <view class="xmz-details-main">
+    <view class="title">- 活动详情 -</view>
+    <view class="desc">{{ store_info }}</view>
+
+    <!-- 活动详情 -->
+    <rich-text nodes="{{ description }}"></rich-text> 
+  </view>
+
+</view>
+
+
+<!-- 报名弹窗 -->
+<van-popup show="{{popupShow}}"  adjust-position position="bottom"  bind:close="onClose">
+    <view class="xmz-signup-box">
+       <van-field
+        data-id='phone'
+        value="{{formData.phone }}"
+        label="联系电话："
+        type='number'
+        bind:change="onChange"
+      />
+      <van-field
+        data-id='enjoyNumber'
+        value="{{formData.enjoyNumber}}"
+        label="参加人数："
+        type='number'
+        bind:change="onChange"
+      />
+      <bottom bindtap='signupSend' class='btn'>立即报名</bottom>
+    </view>
+</van-popup>

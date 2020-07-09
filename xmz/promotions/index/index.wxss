@@ -1,0 +1,128 @@
+/* pages/promotions/index/index.wxss */
+/* banner */
+.xmz-banner{
+  height: 255rpx;
+  overflow: hidden;
+}
+.xmz-banner-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* xmz-title */
+.xmz-title{
+  height:80rpx;
+  font-size:35rpx;
+  color:rgba(29,166,197,1);
+  line-height:80rpx;
+  text-align: center;
+  position: relative;
+}
+.xmz-title:before,.xmz-title:after{
+  content: "";
+  display: inline-block;
+  width:25rpx;
+  height:3rpx;
+  background:rgba(29,166,197,1);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -2rpx;
+}
+.xmz-title:before{
+  margin-left: -110rpx;
+}
+.xmz-title:after{
+  margin-left: 85rpx;
+}
+
+/* xmz-coupon-item */
+.xmz-coupon-item{
+  display: flex;
+  height: 180rpx;
+  background: #fff;
+  box-shadow:0rpx 7rpx 18rpx 0rpx rgba(9,46,58,0.19);
+  margin-top: 40rpx;
+}
+.xmz-coupon-item:first-child{
+  margin-top:0;
+}
+.xmz-coupon-item .coupon-amount{
+  width: 246rpx;
+  background: url(https://xmz.h5vx.cn/img/xiang/yhq_left.png);
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.xmz-coupon-item .coupon-amount .amount{
+   font-size:40rpx;
+   line-height: 60rpx;
+}
+.xmz-coupon-item .coupon-amount .amount .num{
+   font-size:60rpx;
+}
+.xmz-coupon-item .coupon-amount .desc{
+  font-size: 20rpx;
+  line-height: 1;
+}
+.xmz-coupon-item .coupon-info{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 20rpx;
+  text-align: right;
+  padding: 0 30rpx;
+  background: url(https://xmz.h5vx.cn/img/xiang/yhq_right.png);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right 0;
+  line-height: 1.2;
+}
+.xmz-coupon-item .coupon-info .title{
+  font-size: 26rpx;
+  color: #2990BF;
+  font-weight: 500;
+}
+.xmz-coupon-item .coupon-info .deadline{
+  font-size: 22rpx;
+  color: #999;
+  padding: 10rpx 0;
+}
+.xmz-coupon-item .btn{
+  font-size: 22rpx;
+  width: 120rpx;
+  height: 44rpx;
+  display: inline-block;
+  border-radius:44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  color: white;
+}
+.xmz-coupon-item .btn.btn-receive{
+  background: rgb(81, 174, 190);
+}
+.xmz-coupon-item .btn.btn-haveReceived{
+  background: rgb(211,208,212);
+}
+
+/* xmz-promotions */
+.xmz-promotions{
+  margin: -5rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.xmz-promotions .xmz-promotions-item{
+  box-sizing: border-box;
+  width: 50%;
+  padding: 5rpx;
+}
+.xmz-promotions .xmz-promotions-item .pic{
+  width: 100%;
+  height: 250rpx;
+  border-radius: 10rpx;
+}

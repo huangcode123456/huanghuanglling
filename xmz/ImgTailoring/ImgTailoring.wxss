@@ -1,0 +1,15 @@
+/* pages/ImgTailoring/ImgTailoring.wxss */
+.btn{
+  font-size: 39rpx;
+  background: #fff;
+  width: 100% !important;
+  border-radius: 0;
+}
+.btn_f{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}

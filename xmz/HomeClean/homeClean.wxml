@@ -1,0 +1,62 @@
+<!--pages/HomeClean/homeClean.wxml-->
+<view class="main1">
+  <van-cell title="{{ realname }} " value="{{ phone }}" size="large" />
+  <view class="address">
+    {{ familyAddress }}
+  </view>
+</view>
+
+<view class="mr_address">  
+  默认地址
+</view> 
+
+<view class="main1 mb10">
+  <van-cell value="">
+    <view slot="title" class="chacao">
+      <view class="van-cell-text">上门时间：{{date}}</view>
+      <picker mode="date" data-id="date" value="{{time}}" bindchange="bindTimeChange">
+        <view class="picker">
+          <image class="icon" src="{{imgUrl+'img/xiang/xialaxuanxiangka.png'}}"></image>
+        </view>
+      </picker>
+    </view>
+  </van-cell>
+</view>
+
+<!-- <view class="main1 mt10 mb10">
+  <van-cell value="">
+    <view slot="title" class="chacao">
+      <view class="van-cell-text">{{time}}</view>
+      <picker mode="time" data-id="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+        <view class="picker">
+          <image class="icon" src="{{imgUrl+'img/xiang/xialaxuanxiangka.png'}}"></image>
+        </view>
+      </picker>
+    </view>
+  </van-cell>
+</view> -->
+
+<view class="main1 mt10 mb10" wx:for="{{add}}" wx:key="index">
+  <van-cell value="">
+    <view slot="title" class="chacao">
+      <view class="van-cell-text">选择您要清洗的产品：{{value[index]}}</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" data-id="{{index}}" range="{{array}}">
+        <view class="picker">
+          <image class="icon" src="{{imgUrl+'img/xiang/xialaxuanxiangka.png'}}"></image>
+        </view>
+      </picker>
+      
+    </view>
+  </van-cell>
+</view>
+
+<view class="add" bindtap="add">添加产品</view>
+
+
+<view class="lijiyuyue" bindtap="yuyue">
+  立即预约
+</view>
+
+<view class="note">
+  家电清洗服务注意事项
+</view>

@@ -1,0 +1,12 @@
+<!--pages/integral/details/details.wxml-->
+<view class="main">
+  <view class="title">
+    <view class="title_box">
+      <text class="txt1">我的积分：</text>
+      <text class="txt2">{{datalist.jifen}}</text>
+    </view>
+  </view>
+  <view>
+    <van-cell value-class="{{font_col}}" center wx:for="{{datalist.arr}}" wx:key="index" title="{{item.title}}" value="{{item.num}}" label="{{item.date}}" />
+  </view>
+</view>

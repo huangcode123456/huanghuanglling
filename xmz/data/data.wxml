@@ -1,0 +1,75 @@
+<!--pages/data/data.wxml-->
+<view class="main">
+    <view class="gy">
+      <view class="name_cont_1">
+        <input value="{{name}}" data-id="name" bindinput="changeInput" disabled="{{disabled}}"></input>
+        <input value="{{sex}}" data-id="sex" bindinput="changeInput" disabled="{{disabled}}"></input>
+        <input value="{{phone}}" data-id="phone" bindinput="changeInput" disabled="{{disabled}}"></input>
+      </view>
+    </view>
+    <view class="gy">
+      <view class="name_cont_1">
+        <input value="{{birth}}" data-id="birth" bindinput="changeInput" disabled="{{disabled}}"></input>
+      </view>
+    </view>
+    <view class="gy" wx:for="{{chanping}}" wx:key="index">
+        <view class="name_cont_1">
+          <view class="name_inp">
+            <text>购买产品：</text>
+          </view>
+          <input wx:if="{{show_cp[index]}}" data-index='{{index}}' id="sh_address" data-id="chanping" bindinput="changeInput" onfocus="focusInput_cp" value="{{item}}" disabled="{{disabled}}"></input>
+          <textarea wx:if="{{!show_cp[index]}}" data-id="{{index}}"  bindinput="changeInput_cp" value="{{item}}"></textarea>
+        </view>
+    </view>
+    <view class="gy">
+        <view class="name_cont_1">
+          <view class="name_inp">
+            <text>购买门店：</text>
+          </view>
+          <input wx:if="{{show[4]}}" data-index='4' id="az_address" data-id="mendian" bindinput="changeInput" onfocus="focusInput" value="{{mendian}}" disabled="{{disabled}}"></input>
+          <textarea wx:if="{{!show[4]}}" data-id="mendian"  bindinput="changeInput" value="{{mendian}}"></textarea>
+
+          <!-- <input id="az_address" value="{{mendian}}" data-id="mendian" bindinput="changeInput" disabled="{{disabled}}"></input> -->
+        </view>
+    </view>
+
+    <view class="gy">
+        <view class="name_cont_2">
+          <view class="mr_address">  
+            默认地址
+          </view> 
+          <view>
+            <!-- <text wx:if="{{disabled}}">{{mr_address}}</text> -->
+            <input wx:if="{{show[0]}}" id="mr_address" value="{{mr_address}}" data-id="mr_address" data-index='0'  bindinput="changeInput"  disabled="{{disabled}}" onfocus="focusInput"></input>
+            <textarea wx:if="{{!show[0]}}" data-id="mr_address"  bindinput="changeInput" value="{{mr_address}}"></textarea>
+          </view>
+        </view>
+    </view>
+    <view class="gy">
+        <view class="name_cont_2">
+          <view class="mr_address">  
+            送货地址
+          </view> 
+          <view>
+            <!-- <text wx:if="{{disabled}}">{{sh_address}}</text> -->
+            <textarea wx:if="{{!show[1]}}" data-id="sh_address" bindinput="changeInput" value="{{sh_address}}"></textarea>
+            <input wx:if="{{show[1]}}" data-index='1' id="sh_address" value="{{sh_address}}" data-id="sh_address"  bindinput="changeInput" onfocus="focusInput"  disabled="{{disabled}}"></input>
+          </view>
+        </view>
+    </view>
+    <view class="gy">
+        <view class="name_cont_2">
+          <view class="mr_address">  
+            安装地址
+          </view> 
+          <view>
+            <!-- <text wx:if="{{disabled}}">{{az_address}}</text> -->
+            <textarea wx:if="{{!show[2]}}" data-id="az_address" bindinput="changeInput" value="{{az_address}}"></textarea>
+            <input id="az_address" wx:if="{{show[2]}}" data-index='2' value="{{az_address}}" data-id="az_address" onfocus="focusInput" bindinput="changeInput"  disabled="{{disabled}}"></input>
+          </view>
+        </view>
+    </view>
+    
+    <view class="xiugai" bindtap="xiugai">修改资料</view>
+    
+</view>

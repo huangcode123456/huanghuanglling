@@ -1,0 +1,123 @@
+<!--pages/ pointsMall/index/index.wxml-->
+<!-- 头部 -->
+<view class="pm-header">
+  <view class="userCard">
+    <view class="account">
+      <image class='avatar' src="{{ avatar }}"></image>
+      <view class="info">
+        <view class="total">我的积分:{{ points }}</view>
+        <view class="vipLevel">
+          <text class="icon-vip icon-vip-jk"></text>
+          {{ level }}
+        </view>
+      </view>
+    </view>
+    
+    <view>
+      <view>
+        <text class="btn-help" bindtap="toMx">积分明细</text>
+      </view>
+      <view style="margin-top:15rpx;">
+        <text class="btn-help" bindtap="toGz">积分规则</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 主体部分 -->
+<view class="container">
+  <!-- 赚积分 -->
+  <view class="xmz-box" style="margin-top:-120rpx">
+    <view class="xmz-box-title">赚积分</view>
+    <view class="xmz-box-menu">
+      <view class="item">
+        <navigator class="link" hover-class="none" url="/pages/vipClub/index/index?type=1">
+          <image class="icon" src="{{imgUrl+'img/longge/icon-sd.png'}}"></image>
+          <view class="title">晒单有礼</view>
+        </navigator>
+      </view>
+      <view class="item">
+        <navigator class="link" hover-class="none" url="/pages/vipClub/index/index?type=2">
+          <image class="icon" src="{{imgUrl+'img/longge/icon-fx.png'}}"></image>
+          <view class="title">分享有礼</view>
+        </navigator>
+      </view>
+      
+      <view class="item">
+        <navigator class="link" hover-class="none" url="/pages/vipClub/index/index?type=3">
+          <image class="icon" src="{{imgUrl+'img/longge/icon-hd.png'}}"></image>
+          <view class="title">活动有礼</view>
+        </navigator>
+      </view>
+      <view class="item">
+        <navigator class="link" hover-class="none" url="/pages/vipClub/index/index?type=4">
+          <image class="icon" src="{{imgUrl+'img/longge/icon-tl.png'}}"></image>
+          <view class="icon" class="title">答疑有礼</view>
+        </navigator>
+      </view>
+    
+    </view>
+
+  </view>
+
+  <!-- banner -->
+  <swiper style="margin-top:25rpx;" class="xmz-banner" indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{banner}}" wx:key="*this">
+      <swiper-item>
+        <!-- <image class='xmz-banner-img' mode="aspectFill" src="{{item}}"></image> -->
+        <image class='xmz-banner-img' mode="aspectFill" src="{{item.img}}" data-url="{{item.toUrl}}" bindtap="toDetails"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+   
+  <!-- 积分兑换 -->
+  <view class="xmz-box" style="margin-top:25rpx">
+    <view class="xmz-box-title">积分兑换</view>
+    <view class="xmz-box-menu xmz-box-rows3">
+      <block wx:for="{{category}}" wx:key="*this">
+      <view class="item">
+        <navigator class="link" hover-class="none" url="/pages/pointsMall/list/list?cate_id={{item.id}}">
+          <image class="icon" src="{{item.pic}}"></image>
+          <view class="title">{{item.cate_name}}</view>
+        </navigator>
+      </view>
+      </block>
+      <!-- <view class="item">
+        <navigator class="link" hover-class="none" url="/pages/pointsMall/list/list?cate_id=2">
+          <image class="icon" src="{{imgUrl+'img/longge/icon-jfdfw.png'}}"></image>
+          <view class="title">积分兑服务</view>
+        </navigator>
+      </view>
+      <view class="item">
+        <navigator class="link" hover-class="none" url="/pages/pointsMall/list/list?cate_id=3">
+          <image class="icon" src="{{imgUrl+'img/longge/icon-jfdppq.png'}}"></image>
+          <view class="title">积分兑品牌券</view>
+        </navigator>
+      </view>
+      <view class="item">
+        <navigator class="link" hover-class="none" url="/pages/pointsMall/list/list?cate_id=4">
+          <image class="icon" src="{{imgUrl+'img/longge/icon-jfdhl.png'}}"></image>
+          <view class="icon" class="title">积分兑好礼</view>
+        </navigator>
+      </view>
+      <view class="item">
+        <navigator class="link" hover-class="none" url="/pages/pointsMall/list/list?cate_id=5">
+          <image class="icon" src="{{imgUrl+'img/longge/icon-jfxhd.png'}}"></image>
+          <view class="title">积分享活动</view>
+        </navigator>
+      </view> -->
+
+      <view class="item">
+        <view class="link" bindtap="qdBtn" >
+          <image class="icon" src="{{imgUrl+'img/longge/icon-jqqd.png'}}"></image>
+          <view class="title">敬请期待</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+
+</view>

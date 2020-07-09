@@ -1,0 +1,97 @@
+<!--pages/index/index.wxml-->
+
+<!-- 头部 -->
+<view class="user-header">
+  <view class="edit">
+    <image bindtap="edit" class="icon" src="{{imgUrl+'img/longge/icon-setting.png'}}"></image>
+  </view>
+  <view class="userCard">
+    <view class="account">
+      <image class='avatar' src="{{avatar}}"></image>
+      <view class="info">
+        <view class="userName">{{name}}</view>
+        <view class="vipLevel" bindtap="vipLevel">
+          <text class="icon-vip icon-vip-jk"></text>
+           {{level}}
+        </view>
+        <view class="desc">
+          <text bindtap="pointBtn">当前积分: {{points}} </text>
+          <text class="ml20" bindtap="couponBtn">优惠券: {{coupon}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <view>
+      <block wx:if="{{!realname}}">
+      <view>
+        <navigator url="" hover-class="none" class="btn-login" bindtap="registerBtn">注 册</navigator> 
+      </view>
+       </block>
+        <block wx:if="{{!uid}}">
+      <view class="mt20">
+        <button class="btn-login" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登  陆</button>
+      </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+
+<!-- 主体部分 -->
+<view class="container">
+
+  <!-- 菜单导航 -->
+  <view class="xmz-menu"  >
+    <view class="item" wx:for='{{menuList}}' wx:key="*this"  >
+      <view class="link" data-url="{{item.link}}" data-title="{{item.title}}" bindtap="onTapAccess">
+        <image class="icon" src="{{item.icon}}"></image>
+        <view class="title">{{item.title}}</view>
+      </view>
+    </view>
+    <!-- <view class="item"  bindtap="yhBtn">
+      <navigator class="link">
+        <image class="icon" src="https://zgkpz.com/img/longge/icon-yhhd.png"></image>
+        <view class="title">优惠活动</view>
+      </navigator>
+    </view>
+    <view class="item"  bindtap="yyBtn">
+      <navigator class="link">
+        <image class="icon" src="https://zgkpz.com/img/longge/icon-wyyy.png"></image>
+        <view class="title">我要预约</view>
+      </navigator>
+    </view>
+    <view class="item"  bindtap="tsBtn">
+      <navigator class="link">
+        <image class="icon" src="https://zgkpz.com/img/longge/icon-wyts.png"></image>
+        <view class="icon" class="title">我要投诉</view>
+      </navigator>
+    </view>
+    <view class="item"  bindtap="mtBtn">
+      <navigator class="link">
+        <image class="icon" src="https://zgkpz.com/img/longge/icon-xmtjz.png"></image>
+        <view class="title">新媒体矩阵</view>
+      </navigator>
+    </view>
+    <view class="item" bindtap="memberBtn">
+      <navigator class="link">
+        <image class="icon" src="https://zgkpz.com/img/longge/icon-hyjlb.png"></image>
+        <view class="title">会员俱乐部</view>
+      </navigator>
+    </view> -->
+  </view>
+
+
+  <!-- 会员活动 -->
+  <view class="xmz-title">会员活动</view>
+
+  <swiper class="xmz-banner" indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{banner}}" wx:key="*this">
+      <swiper-item>
+        <image class='xmz-banner-img' mode="aspectFill" src="{{item.img}}" data-url="{{item.toUrl}}" bindtap="toDetails"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+</view>

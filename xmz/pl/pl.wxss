@@ -1,0 +1,101 @@
+/* pages/pl/pl.wxss */
+.context{
+  padding: 20rpx;
+  width: 95%;
+}
+/* 公共样式 */
+.pl20{
+  padding: 20rpx;
+}
+.borbm{
+  border-bottom: 1px solid rgba(228,227,227,1);
+}
+.fc{
+  color: #1E91A4;
+  font-weight:400;
+  font-size:17px;
+}
+.relat{
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+
+/* 分别样式 */
+.head{
+  width: 100%;
+  height: 95rpx;
+}
+.active{
+  width:42rpx;
+  height:10rpx;
+  background:rgba(30,145,164,1);
+  position: absolute;
+  left: 40rpx;
+  bottom: -5rpx;
+}
+.tx{
+  width:70rpx;
+  height:70rpx;
+  border-radius:50%;
+  overflow:hidden;
+}
+.tx-name{
+  max-width: 350rpx;
+  font-size:14px;
+  font-weight:400;
+  color:rgba(80,80,80,1);
+  line-height: 50rpx;
+  padding:10rpx;
+  margin-left: 20rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.tx-time{
+  font-size:12px;
+  font-weight:400;
+  color:rgba(80,80,80,1);
+  line-height:50rpx;
+  padding:10rpx;
+  margin-left:20rpx;
+}
+.body-text{
+  width: 80%;
+  min-height: 50rpx;
+  font-size:28rpx;
+  font-weight:400;
+  color:rgba(64,64,64,1);
+  padding-left: 18%;
+  padding-bottom: 20rpx;
+}
+.foot{
+  width:100%;
+  height:100rpx;
+  background:rgba(255,255,255,1);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-top: 20rpx;
+  padding-left: 40rpx;
+}
+.foot-input{
+  width:420rpx;
+  height:80rpx;
+  background:#d7d7dc;
+  padding-left: 20rpx;
+  margin-left: 60rpx;
+}
+.foot-tj{
+  width:120rpx;
+  height:80rpx;
+  background:rgba(70,184,190,1);
+  border-radius:17px;
+  font-size:14px;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:80rpx;
+  margin-left: 10rpx;
+  text-align: center;
+}

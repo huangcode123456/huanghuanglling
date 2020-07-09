@@ -1,0 +1,99 @@
+/* pages/coupons/coupons.wxss */
+.main{
+  width: 670rpx;
+  height: 180rpx;
+  /* border: 1px solid red; */
+  margin: 60rpx auto 0rpx auto;
+  display: flex;
+  /* background: white; */
+  box-shadow: 10px 5px 4px rgba(0, 0, 0, .1);
+  justify-content: space-between;
+}
+.main_back{
+  display: flex;
+  width: 246rpx;
+  height: 180rpx;
+  background: url(https://xmz.h5vx.cn/img/xiang/yhq_left.png);
+  text-align: center;
+  align-items: center;
+}
+.icon{
+  font-size: 39rpx;
+  color: white;
+}
+.money{
+  font-size:67rpx;
+  color: white;
+}
+.note{
+  color: white;
+  font-size:19rpx;
+  display: block;
+}
+
+.title{
+  font-size: 30rpx;
+  color: rgb(66, 160, 199)
+}
+.date{
+  font-size: 24rpx;
+  color: #666;
+}
+.main_right{
+  background: white;
+  text-align: right;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+/* .main_right::after{
+  content:url(https://xmz.h5vx.cn/img/xiang/yhq_right.png);
+  width: 28rpx;
+  height: 180rpx;
+} */
+
+.back_right{
+  width: 29rpx;
+  height: 180rpx;
+  background: url(https://xmz.h5vx.cn/img/xiang/yhq_right.png);
+  background-size: cover;
+}
+
+.main_right_1{
+  flex:1;
+}
+.btn,.no_btn{
+  font-size: 24rpx;
+  width: 120rpx;
+  height: 50rpx;
+  border-radius:50rpx;
+  
+  line-height: 50rpx;
+  text-align: center;
+  margin-top: 10rpx;
+  float: right;
+  color: white;
+}
+.btn{
+  background: rgb(81, 174, 190);
+
+}
+.no_btn{
+  background: rgb(211,208,212);
+}
+.xmz-signup-box{
+  padding: 40rpx 40rpx 100rpx;
+}
+.xmz-signup-box .btn{
+  height:72rpx;
+  line-height: 72rpx;
+  background:rgba(70,184,190,1);
+  border-radius:8rpx;
+  width: 100%;
+  margin: 40rpx 0 0;
+  padding: 0;
+  font-size:36rpx;
+  color:rgba(255,255,255,1);
+  display: block;
+  text-align: center;
+}

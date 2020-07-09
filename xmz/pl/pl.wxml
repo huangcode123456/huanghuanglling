@@ -1,0 +1,32 @@
+<!--pages/pl/pl.wxml-->
+<view class="context">
+<view class="head relat">
+<view class="pl20 fc borbm">全部</view>
+<view class="active"></view>
+</view>
+
+
+
+<view class="body" style="padding-bottom:150rpx;">
+<view wx:for="{{list}}" wx:key="{{index}}">
+<view style="display:flex;width:100%;height:75rpx;padding-top:20rpx;padding-left:30rpx;">
+<view class="tx"><image style="width:70rpx;height:100%" src="{{item.headimg}}"></image></view>
+<view class="tx-name">{{item.name}}</view>
+<view class="tx-time">{{item.time}}</view>
+</view>
+<view class="body-text borbm">{{item.text}}</view>
+</view>
+</view>
+
+
+
+<view class="foot">
+<view style="display:flex">
+<view style="font-size:34rpx;background:url('/images/ioc3.png') #d7d7dc no-repeat 0.5rem center;background-size:7%;border-radius:24px;width:550rpx;position:relative;top:0;left:0;">
+  <image style="width:40rpx;height:40rpx;position:absolute;top:20rpx;left:20rpx;" src="../../images/ioc3.png"></image>
+  <input class="foot-input" placeholder="优质评论将获得800积分哦" bindinput="input"></input>
+</view>
+<view class="foot-tj" bindtap="update">提交</view>
+</view>
+</view>
+</view>
